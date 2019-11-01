@@ -1,5 +1,5 @@
 provider google {
-  project = examplea
+  project = "examplea"
   region  = "europe-west1"
   version = "2.10"
 }

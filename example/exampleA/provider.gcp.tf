@@ -3,4 +3,3 @@ provider google {
   region  = "europe-west1"
   version = "2.10"
 }
-

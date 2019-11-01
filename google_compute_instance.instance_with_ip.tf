@@ -16,5 +16,3 @@ resource google_compute_instance instance_with_ip {
     }
   }
 }
-
-

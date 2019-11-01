@@ -16,7 +16,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 Include this repository as a module in your existing terraform code:
 
 ```hcl
-module "statebucket" {
+module staticip {
 source      = "JamesWoolfenden/staticip/gcp"
 version     = "0.0.4"
 common_tags = var.common_tags
@@ -31,15 +31,7 @@ common_tags = var.common_tags
 | common_tags | This is a map type for applying tags on resources | map | - | yes |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-## Outputs
-
-| Name | Description |
-|------|-------------|
-| bucket_domain_name | The Url of the statebucket |
-
 ## Information
-
-
 
 ## Related Projects
 

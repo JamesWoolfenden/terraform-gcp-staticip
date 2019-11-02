@@ -13,24 +13,20 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
 
-![asciicast](./docs/terraform-gcp-staticip.svg)
+![[asciicast][https://raw.githubusercontent.com/gist/JamesWoolfenden/b6c8f34576bf74cc1bc505eaf20ed519/raw/bd6e3a650c17f2d4d359af4adce763a600b7754a/terraform-gcp-staticip.svg)]](https://raw.githubusercontent.com/gist/JamesWoolfenden/b6c8f34576bf74cc1bc505eaf20ed519/raw/bd6e3a650c17f2d4d359af4adce763a600b7754a/terraform-gcp-staticip.svg?sanitize=true)
 
 Include this repository as a module in your existing terraform code:
 
 ```hcl
 module staticip {
-source      = "JamesWoolfenden/staticip/gcp"
-version     = "0.0.4"
-common_tags = var.common_tags
+  source      = "JamesWoolfenden/staticip/gcp"
+  version     = "0.0.4"
+  common_tags = var.common_tags
 }
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| common_tags | This is a map type for applying tags on resources | map | - | yes |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Information

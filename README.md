@@ -1,13 +1,9 @@
 
 [![Slalom][logo]](https://slalom.com)
 
-# terraform-gcp-staticip
-
- [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-gcp-staticip.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-gcp-staticip) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-staticip.svg)](https://github.com/JamesWoolfenden/terraform-gcp-staticip/releases/latest)
+# terraform-gcp-staticip [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-gcp-staticip.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-gcp-staticip) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-staticip.svg)](https://github.com/JamesWoolfenden/terraform-gcp-staticip/releases/latest)
 
 Terraform module to provision an instance with a static IP.
-
----
 
 It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
@@ -17,7 +13,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 Include this repository as a module in your existing terraform code:
 
-```hcl
+```terraform
 module staticip {
   source      = "JamesWoolfenden/staticip/gcp"
   version     = "0.0.4"
@@ -78,18 +74,15 @@ under the License.
 
 ### Contributors
 
-  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
+[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
-  [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
-  [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
+[jameswoolfenden_homepage]: https://github.com/jameswoolfenden
+[jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/company/slalom-consulting/
 [twitter]: https://twitter.com/Slalom
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-gcp-staticip&url=https://github.com/JamesWoolfenden/terraform-gcp-staticip
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-gcp-staticip&url=https://github.com/JamesWoolfenden/terraform-gcp-staticip
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-gcp-staticip

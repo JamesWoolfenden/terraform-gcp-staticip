@@ -4,11 +4,13 @@ variable "common_tags" {
 }
 
 variable "name" {
-  default = "ipv4-address"
+  description = "Name of the instance"
+  default     = "ipv4-address"
 }
 
 variable "image" {
-  type = map
+  description = "Instance Image"
+  type        = map
   default = {
     family  = "debian-9"
     project = "debian-cloud"
@@ -16,11 +18,13 @@ variable "image" {
 }
 
 variable "machine_type" {
-  type    = string
-  default = "f1-micro"
+  description = "Instance machine type"
+  type        = string
+  default     = "f1-micro"
 }
 
 variable "zone" {
-  type    = string
-  default = "us-central1-a"
+  description = "GCP Zone"
+  type        = string
+  default     = "us-central1-a"
 }

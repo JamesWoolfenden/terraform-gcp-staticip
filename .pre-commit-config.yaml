@@ -52,4 +52,3 @@ repos:
     rev: 1.18.2
     hooks:
       - id: prettier
-    exclude_types: [markdown]

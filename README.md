@@ -22,7 +22,23 @@ module staticip {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Inputs
 
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| common\_tags | This is a map type for applying tags on resources | map | n/a | yes |
+| image | The Instance Image | map | `<map>` | no |
+| machine\_type | GCP instance type | string | `"f1-micro"` | no |
+| name | Name of the GCP instance | string | `"ipv4-address"` | no |
+| zone | GCP Zone | string | `"us-central1-a"` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| instance\_id |  |
+| source\_image\_id |  |
+| source\_image\_name |  |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Information

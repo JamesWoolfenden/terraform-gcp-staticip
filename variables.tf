@@ -1,13 +1,13 @@
-variable common_tags {
+variable "common_tags" {
   description = "This is a map type for applying tags on resources"
   type        = map
 }
 
-variable name {
+variable "name" {
   default = "ipv4-address"
 }
 
-variable image {
+variable "image" {
   type = map
   default = {
     family  = "debian-9"
@@ -15,12 +15,12 @@ variable image {
   }
 }
 
-variable machine_type {
+variable "machine_type" {
   type    = string
   default = "f1-micro"
 }
 
-variable zone {
+variable "zone" {
   type    = string
   default = "us-central1-a"
 }

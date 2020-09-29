@@ -1,6 +1,3 @@
-
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-gcp-staticip [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-gcp-staticip.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-gcp-staticip) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-staticip.svg)](https://github.com/JamesWoolfenden/terraform-gcp-staticip/releases/latest)
 
 Terraform module to provision an instance with a static IP.
@@ -22,23 +19,25 @@ module staticip {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| common\_tags | This is a map type for applying tags on resources | map | n/a | yes |
-| image | The Instance Image | map | `<map>` | no |
-| machine\_type | GCP instance type | string | `"f1-micro"` | no |
-| name | Name of the GCP instance | string | `"ipv4-address"` | no |
-| zone | GCP Zone | string | `"us-central1-a"` | no |
+| Name         | Description                                       |  Type  |      Default      | Required |
+| ------------ | ------------------------------------------------- | :----: | :---------------: | :------: |
+| common_tags  | This is a map type for applying tags on resources |  map   |        n/a        |   yes    |
+| image        | The Instance Image                                |  map   |      `<map>`      |    no    |
+| machine_type | GCP instance type                                 | string |   `"f1-micro"`    |    no    |
+| name         | Name of the GCP instance                          | string | `"ipv4-address"`  |    no    |
+| zone         | GCP Zone                                          | string | `"us-central1-a"` |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| instance\_id |  |
-| source\_image\_id |  |
-| source\_image\_name |  |
+| Name              | Description |
+| ----------------- | ----------- |
+| instance_id       |             |
+| source_image_id   |             |
+| source_image_name |             |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Information
@@ -63,7 +62,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-gcp-
 
 ## Copyrights
 
-Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2019 James Woolfenden
 
 ## License
 
@@ -72,19 +71,19 @@ Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
@@ -97,8 +96,8 @@ under the License.
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
-[linkedin]: https://www.linkedin.com/company/slalom-consulting/
-[twitter]: https://twitter.com/Slalom
+[linkedin]: https://www.linkedin.com/in/jameswoolfenden/
+[twitter]: https://twitter.com/JimWoolfenden
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-gcp-staticip&url=https://github.com/JamesWoolfenden/terraform-gcp-staticip
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-gcp-staticip&url=https://github.com/JamesWoolfenden/terraform-gcp-staticip
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-gcp-staticip

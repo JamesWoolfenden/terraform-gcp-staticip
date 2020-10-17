@@ -15,4 +15,7 @@ resource google_compute_instance instance_with_ip {
       nat_ip = google_compute_address.static.address
     }
   }
+  metadata = {
+    block-project-ssh-keys = true
+  }
 }

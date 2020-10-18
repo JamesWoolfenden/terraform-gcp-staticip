@@ -1,4 +1,9 @@
-# terraform-gcp-staticip [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-gcp-staticip.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-gcp-staticip) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-staticip.svg)](https://github.com/JamesWoolfenden/terraform-gcp-staticip/releases/latest)
+# terraform-gcp-staticip
+
+[![Build Status](https://github.com/JamesWoolfenden/terraform-gcp-staticip/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-gcp-staticip)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-staticip.svg)](https://github.com/JamesWoolfenden/terraform-gcp-staticip/releases/latest)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 Terraform module to provision an instance with a static IP.
 
@@ -19,24 +24,33 @@ module staticip {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| google | n/a |
 
 ## Inputs
 
-| Name         | Description                                       |  Type  |      Default      | Required |
-| ------------ | ------------------------------------------------- | :----: | :---------------: | :------: |
-| common_tags  | This is a map type for applying tags on resources |  map   |        n/a        |   yes    |
-| image        | The Instance Image                                |  map   |      `<map>`      |    no    |
-| machine_type | GCP instance type                                 | string |   `"f1-micro"`    |    no    |
-| name         | Name of the GCP instance                          | string | `"ipv4-address"`  |    no    |
-| zone         | GCP Zone                                          | string | `"us-central1-a"` |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| common\_tags | This is a map type for applying tags on resources | `map` | n/a | yes |
+| image | Instance Image | `map` | <pre>{<br>  "family": "debian-9",<br>  "project": "debian-cloud"<br>}</pre> | no |
+| machine\_type | Instance machine type | `string` | `"f1-micro"` | no |
+| name | Name of the instance | `string` | `"ipv4-address"` | no |
+| zone | GCP Zone | `string` | `"us-central1-a"` | no |
 
 ## Outputs
 
-| Name              | Description |
-| ----------------- | ----------- |
-| instance_id       |             |
-| source_image_id   |             |
-| source_image_name |             |
+| Name | Description |
+|------|-------------|
+| instance\_id | n/a |
+| source\_image\_id | n/a |
+| source\_image\_name | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -62,7 +76,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-gcp-
 
 ## Copyrights
 
-Copyright © 2019-2019 James Woolfenden
+Copyright © 2019-2020 James Woolfenden
 
 ## License
 
@@ -93,8 +107,6 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden

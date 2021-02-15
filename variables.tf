@@ -1,6 +1,6 @@
 variable "common_tags" {
   description = "This is a map type for applying tags on resources"
-  type        = map
+  type        = map(any)
 }
 
 variable "name" {
@@ -10,7 +10,7 @@ variable "name" {
 
 variable "image" {
   description = "Instance Image"
-  type        = map
+  type        = map(any)
   default = {
     family  = "debian-9"
     project = "debian-cloud"

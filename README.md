@@ -38,8 +38,8 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_tags | This is a map type for applying tags on resources | `map` | n/a | yes |
-| image | Instance Image | `map` | <pre>{<br>  "family": "debian-9",<br>  "project": "debian-cloud"<br>}</pre> | no |
+| common\_tags | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
+| image | Instance Image | `map(any)` | <pre>{<br>  "family": "debian-9",<br>  "project": "debian-cloud"<br>}</pre> | no |
 | machine\_type | Instance machine type | `string` | `"f1-micro"` | no |
 | name | Name of the instance | `string` | `"ipv4-address"` | no |
 | zone | GCP Zone | `string` | `"us-central1-a"` | no |

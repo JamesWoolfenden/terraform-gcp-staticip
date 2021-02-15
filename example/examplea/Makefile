@@ -1,6 +1,7 @@
 # Makefile
 ifdef OS
    BLAT = $(powershell  -noprofile rm .\.terraform\ -force -recurse)
+   RM = $(powershell  -noprofile rm .\.terraform\ -force -recurse)
 else
    ifeq ($(shell uname), Linux)
       RM  = rm .terraform/modules/ -fr
@@ -14,7 +15,7 @@ all: init plan build
 
 init:
 	$(RM)
-	terraform init -reconfigure
+	terraform init -reconfigure -upgrade
 
 plan:
 	terraform plan -refresh=true
@@ -37,8 +38,9 @@ docs:
 	terraform-docs md . > README.md
 
 valid:
-	terraform fmt
+	terraform fmt -recursive
 	checkov -d . --external-checks-dir ../../checkov
+	tfsec .
 
 target:
 	@read -p "Enter Module to target:" MODULE;

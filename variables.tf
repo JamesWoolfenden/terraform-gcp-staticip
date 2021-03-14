@@ -5,14 +5,14 @@ variable "common_tags" {
 
 variable "name" {
   description = "Name of the instance"
-  default     = "ipv4-address"
+  default     = "instance-1"
 }
 
 variable "image" {
   description = "Instance Image"
   type        = map(any)
   default = {
-    family  = "debian-9"
+    family  = "debian-10"
     project = "debian-cloud"
   }
 }

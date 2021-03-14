@@ -39,14 +39,26 @@ No requirements.
 |------|---------|
 | google | n/a |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [google_compute_address](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_address) |
+| [google_compute_image](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) |
+| [google_compute_instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | common\_tags | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
-| image | Instance Image | `map(any)` | <pre>{<br>  "family": "debian-9",<br>  "project": "debian-cloud"<br>}</pre> | no |
+| image | Instance Image | `map(any)` | <pre>{<br>  "family": "debian-10",<br>  "project": "debian-cloud"<br>}</pre> | no |
 | machine\_type | Instance machine type | `string` | `"f1-micro"` | no |
-| name | Name of the instance | `string` | `"ipv4-address"` | no |
+| name | Name of the instance | `string` | `"instance-1"` | no |
 | zone | GCP Zone | `string` | `"us-central1-a"` | no |
 
 ## Outputs
@@ -56,7 +68,6 @@ No requirements.
 | instance\_id | n/a |
 | source\_image\_id | n/a |
 | source\_image\_name | n/a |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Information

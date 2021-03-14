@@ -13,9 +13,12 @@ resource "google_compute_instance" "instance_with_ip" {
     }
   }
 
+  allow_stopping_for_update = true
+
   shielded_instance_config {
     enable_integrity_monitoring = true
     enable_vtpm                 = true
+    enable_secure_boot          = true
   }
 
   network_interface {
@@ -28,4 +31,5 @@ resource "google_compute_instance" "instance_with_ip" {
   metadata = {
     block-project-ssh-keys = true
   }
+
 }

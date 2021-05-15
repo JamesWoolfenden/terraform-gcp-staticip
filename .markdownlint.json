@@ -4,7 +4,8 @@
     "allowed_elements": [
       "br",
       "img",
-      "pre"
+      "pre",
+      "a"
     ]
   },
   "MD041": false

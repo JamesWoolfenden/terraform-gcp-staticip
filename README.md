@@ -37,37 +37,37 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| google | n/a |
+| <a name="provider_google"></a> [google](#provider\_google) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [google_compute_address](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_address) |
-| [google_compute_image](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) |
-| [google_compute_instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) |
+| Name | Type |
+|------|------|
+| [google_compute_address.static](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_address) | resource |
+| [google_compute_instance.instance_with_ip](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) | resource |
+| [google_compute_image.image](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_tags | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
-| image | Instance Image | `map(any)` | <pre>{<br>  "family": "debian-10",<br>  "project": "debian-cloud"<br>}</pre> | no |
-| machine\_type | Instance machine type | `string` | `"f1-micro"` | no |
-| name | Name of the instance | `string` | `"instance-1"` | no |
-| zone | GCP Zone | `string` | `"us-central1-a"` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
+| <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br>  "family": "debian-10",<br>  "project": "debian-cloud"<br>}</pre> | no |
+| <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type | `string` | `"f1-micro"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the instance | `string` | `"instance-1"` | no |
+| <a name="input_zone"></a> [zone](#input\_zone) | GCP Zone | `string` | `"us-central1-a"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| instance\_id | n/a |
-| source\_image\_id | n/a |
-| source\_image\_name | n/a |
+| <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | n/a |
+| <a name="output_source_image_id"></a> [source\_image\_id](#output\_source\_image\_id) | n/a |
+| <a name="output_source_image_name"></a> [source\_image\_name](#output\_source\_image\_name) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Information

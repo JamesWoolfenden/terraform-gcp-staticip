@@ -40,8 +40,7 @@ jobs:
           tf_actions_subcommand: plan
           tf_actions_working_dir: ${{ env.tf_target_dir }}
         env:
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          GOOGLE_CLOUD_KEYFILE_JSON: ${{ GOOGLE_CLOUD_KEYFILE_JSON }}
       - run: |
           pip3 install lastversion
           lastversion infracost --assets -d --verbose
@@ -54,6 +53,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Do not change
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          GOOGLE_CLOUD_KEYFILE_JSON: ${{ GOOGLE_CLOUD_KEYFILE_JSON }}
   security:
     runs-on: ubuntu-latest
     steps:
@@ -73,6 +73,24 @@ jobs:
           chmod +x $GITHUB_WORKSPACE/bin/terraform-docs
           echo "$GITHUB_WORKSPACE/bin" >> $GITHUB_PATH
       - uses: pre-commit/action@v2.0.0
+  infracost:
+    runs-on: ubuntu-latest
+    name: Show infracost diff
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Run infracost diff
+        uses: infracost/infracost-gh-action@master # Use a specific version instead of master if locking is preferred
+        env:
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Do not change
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          # See the cloud credentials section for the options
+        with:
+          entrypoint: /scripts/ci/diff.sh # Do not change
+          path: ${{ env.tf_target_dir }}
+          #terraform_plan_flags: -var-file=my.tfvars
   version:
     name: versioning
     runs-on: ubuntu-latest

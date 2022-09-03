@@ -2,7 +2,7 @@ resource "google_compute_instance" "instance_with_ip" {
   # TODO:
   #checkov:skip=CKV_GCP_30: "Ensure that instances are not configured to use the default service account"
   #checkov:skip=CKV_GCP_38: "Ensure VM disks for critical VMs are encrypted with Customer Supplied Encryption Keys (CSEK)"
-
+  #checkov:skip=CKV_GCP_40: intent
   name         = var.name
   machine_type = var.machine_type
   zone         = var.zone

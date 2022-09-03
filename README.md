@@ -37,7 +37,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 3.56.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | n/a |
 
 ## Modules
 
@@ -69,6 +69,36 @@ No modules.
 | <a name="output_source_image_id"></a> [source\_image\_id](#output\_source\_image\_id) | n/a |
 | <a name="output_source_image_name"></a> [source\_image\_name](#output\_source\_image\_name) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## Role and Permissions
+
+<!-- BEGINNING OF PRE-COMMIT-PIKE DOCS HOOK -->
+The Terraform resource required is:
+
+```golang
+resource "google_project_iam_custom_role" "terraformXVlBzgba" {
+  project     = "examplea"
+  role_id     = "terraform_pike"
+  title       = "terraformXVlBzgba"
+  description = "A user with least privileges"
+  permissions = [
+    "compute.addresses.create",
+    "compute.addresses.delete",
+    "compute.addresses.get",
+    "compute.disks.create",
+    "compute.instances.create",
+    "compute.instances.delete",
+    "compute.instances.get",
+    "compute.instances.setMetadata",
+    "compute.networks.use",
+    "compute.subnetworks.use",
+    "compute.subnetworks.useExternalIp",
+    "compute.zones.get"
+  ]
+}
+
+```
+<!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->
 
 ## Information
 
@@ -123,11 +153,3 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[github]: https://github.com/jameswoolfenden
-[linkedin]: https://www.linkedin.com/in/jameswoolfenden/
-[twitter]: https://twitter.com/JimWoolfenden
-[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-gcp-staticip&url=https://github.com/JamesWoolfenden/terraform-gcp-staticip
-[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-gcp-staticip&url=https://github.com/JamesWoolfenden/terraform-gcp-staticip
-[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-gcp-staticip
-[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-gcp-staticip
-[share_email]: mailto:?subject=terraform-gcp-staticip&body=https://github.com/JamesWoolfenden/terraform-gcp-staticip

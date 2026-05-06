@@ -33,7 +33,7 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_google"></a> [google](#provider\_google) | n/a |
 
 ## Modules
@@ -43,7 +43,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [google_compute_address.static](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_address) | resource |
 | [google_compute_instance.instance_with_ip](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) | resource |
 | [google_compute_image.image](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) | data source |
@@ -51,9 +51,9 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
-| <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br>  "family": "debian-10",<br>  "project": "debian-cloud"<br>}</pre> | no |
+| <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br/>  "family": "debian-10",<br/>  "project": "debian-cloud"<br/>}</pre> | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type | `string` | `"f1-micro"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the instance | `string` | `"instance-1"` | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | GCP Zone | `string` | `"us-central1-a"` | no |
@@ -61,7 +61,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | n/a |
 | <a name="output_source_image_id"></a> [source\_image\_id](#output\_source\_image\_id) | n/a |
 | <a name="output_source_image_name"></a> [source\_image\_name](#output\_source\_image\_name) | n/a |

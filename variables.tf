@@ -12,7 +12,7 @@ variable "image" {
   description = "Instance Image"
   type        = map(any)
   default = {
-    family  = "debian-10"
+    family  = "debian-13"
     project = "debian-cloud"
   }
 }

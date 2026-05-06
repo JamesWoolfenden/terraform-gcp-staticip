@@ -53,7 +53,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
-| <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br/>  "family": "debian-10",<br/>  "project": "debian-cloud"<br/>}</pre> | no |
+| <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br/>  "family": "debian-13",<br/>  "project": "debian-cloud"<br/>}</pre> | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type | `string` | `"f1-micro"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the instance | `string` | `"instance-1"` | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | GCP Zone | `string` | `"us-central1-a"` | no |

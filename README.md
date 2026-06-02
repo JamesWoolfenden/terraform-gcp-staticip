@@ -58,6 +58,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Name of the instance | `string` | `"instance-1"` | no |
 | <a name="input_network"></a> [network](#input\_network) | The name or self\_link of the VPC network to which the instance will be connected. Must not be the default network. | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | GCP Project ID | `string` | n/a | yes |
+| <a name="input_service_account_scopes"></a> [service\_account\_scopes](#input\_service\_account\_scopes) | OAuth scopes for the instance service account. Defaults to logging and monitoring only. Do not use 'cloud-platform'. | `list(string)` | <pre>[<br/>  "https://www.googleapis.com/auth/logging.write",<br/>  "https://www.googleapis.com/auth/monitoring"<br/>]</pre> | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | GCP Zone | `string` | `"us-central1-a"` | no |
 
 ## Outputs

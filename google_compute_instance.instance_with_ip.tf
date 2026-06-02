@@ -35,7 +35,7 @@ resource "google_compute_instance" "instance_with_ip" {
 
   service_account {
     email  = google_service_account.instance.email
-    scopes = ["cloud-platform"]
+    scopes = var.service_account_scopes
   }
 
 }

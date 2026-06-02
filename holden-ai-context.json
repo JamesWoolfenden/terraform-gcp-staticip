@@ -1,0 +1,6801 @@
+{
+  "coverage_by_type": {
+    "*": [
+      {
+        "id": "HLD_TF_016",
+        "name": "Resource names must use snake_case"
+      },
+      {
+        "id": "HLD_TF_020",
+        "name": "Resource names must not be placeholder identifiers"
+      },
+      {
+        "id": "HLD_TF_024",
+        "name": "Resource blocks are better placed in a descriptively named file than main.tf"
+      },
+      {
+        "id": "HLD_TF_036",
+        "name": "Resource labels must not repeat the resource type"
+      },
+      {
+        "id": "HLD_TF_051",
+        "name": "lifecycle ignore_changes must not use the all keyword"
+      },
+      {
+        "id": "HLD_TF_052",
+        "name": "terraform.workspace must not be used in resource configuration"
+      },
+      {
+        "id": "HLD_TF_053",
+        "name": "count.index must not appear in resource name attributes"
+      }
+    ],
+    "aws_acm_certificate": [
+      {
+        "id": "HLD_AWS_043",
+        "name": "ACM certificates must have certificate transparency logging enabled"
+      }
+    ],
+    "aws_alb": [
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_086",
+        "name": "ALBs must drop invalid HTTP header fields"
+      },
+      {
+        "id": "HLD_AWS_089",
+        "name": "Load balancers must have access logging enabled"
+      },
+      {
+        "id": "HLD_AWS_164",
+        "name": "Application Load Balancers must have deletion protection enabled"
+      }
+    ],
+    "aws_alb_listener": [
+      {
+        "id": "HLD_AWS_154",
+        "name": "ALB HTTP listeners must redirect to HTTPS"
+      }
+    ],
+    "aws_api_gateway_domain_name": [
+      {
+        "id": "HLD_AWS_088",
+        "name": "API Gateway custom domain names must enforce TLS 1.2"
+      }
+    ],
+    "aws_api_gateway_method": [
+      {
+        "id": "HLD_AWS_193",
+        "name": "API Gateway methods must require authorisation"
+      }
+    ],
+    "aws_api_gateway_stage": [
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_149",
+        "name": "API Gateway (v1) stages must have access logging enabled"
+      },
+      {
+        "id": "HLD_AWS_174",
+        "name": "API Gateway stages must enable X-Ray tracing"
+      }
+    ],
+    "aws_apigatewayv2_stage": [
+      {
+        "id": "HLD_AWS_150",
+        "name": "API Gateway v2 stages must have access logging enabled"
+      }
+    ],
+    "aws_appsync_graphql_api": [
+      {
+        "id": "HLD_AWS_205",
+        "name": "AppSync GraphQL APIs must have CloudWatch logging enabled"
+      }
+    ],
+    "aws_athena_workgroup": [
+      {
+        "id": "HLD_AWS_066",
+        "name": "Athena workgroups must have encryption configured for query results"
+      },
+      {
+        "id": "HLD_AWS_067",
+        "name": "Athena workgroups must enforce workgroup configuration"
+      }
+    ],
+    "aws_autoscaling_group": [
+      {
+        "id": "HLD_AWS_077",
+        "name": "Auto Scaling groups must be deployed in VPC subnets"
+      },
+      {
+        "id": "HLD_AWS_209",
+        "name": "Auto Scaling Groups must not use $Latest launch template version"
+      }
+    ],
+    "aws_backup_vault": [
+      {
+        "id": "HLD_AWS_059",
+        "name": "Backup vaults must use a customer-managed KMS key"
+      },
+      {
+        "id": "HLD_AWS_202",
+        "name": "Backup vaults should have a vault lock configuration"
+      }
+    ],
+    "aws_cloudfront_distribution": [
+      {
+        "id": "HLD_AWS_023",
+        "name": "CloudFront distributions must redirect HTTP to HTTPS"
+      },
+      {
+        "id": "HLD_AWS_024",
+        "name": "CloudFront distributions must have WAF enabled"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_112",
+        "name": "CloudFront distributions should not use PriceClass_All unless global reach is required"
+      },
+      {
+        "id": "HLD_AWS_151",
+        "name": "CloudFront distributions must have access logging enabled"
+      }
+    ],
+    "aws_cloudtrail": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_014",
+        "name": "CloudTrail must be multi-region"
+      },
+      {
+        "id": "HLD_AWS_079",
+        "name": "CloudTrail must have log file validation enabled"
+      },
+      {
+        "id": "HLD_AWS_080",
+        "name": "CloudTrail must capture global service events"
+      },
+      {
+        "id": "HLD_AWS_094",
+        "name": "S3 buckets used for CloudTrail logs must have access logging enabled"
+      },
+      {
+        "id": "HLD_AWS_161",
+        "name": "CloudTrail must have event selectors configured for data event logging"
+      },
+      {
+        "id": "HLD_AWS_194",
+        "name": "CloudTrail trails must send logs to CloudWatch Logs"
+      }
+    ],
+    "aws_cloudwatch_log_group": [
+      {
+        "id": "HLD_AWS_038",
+        "name": "CloudWatch log groups must have a retention period configured"
+      },
+      {
+        "id": "HLD_AWS_039",
+        "name": "CloudWatch log groups must be encrypted with a KMS key"
+      },
+      {
+        "id": "HLD_AWS_109",
+        "name": "CloudWatch log groups should have a retention period set"
+      }
+    ],
+    "aws_cloudwatch_log_metric_filter": [
+      {
+        "id": "HLD_AWS_117",
+        "name": "CloudWatch metric filter must detect unauthorized API calls (CIS 3.1)"
+      },
+      {
+        "id": "HLD_AWS_118",
+        "name": "CloudWatch metric filter must detect console sign-in without MFA (CIS 3.2)"
+      },
+      {
+        "id": "HLD_AWS_119",
+        "name": "CloudWatch metric filter must detect root account usage (CIS 3.3)"
+      },
+      {
+        "id": "HLD_AWS_120",
+        "name": "CloudWatch metric filter must detect IAM policy changes (CIS 3.4)"
+      },
+      {
+        "id": "HLD_AWS_121",
+        "name": "CloudWatch metric filter must detect CloudTrail configuration changes (CIS 3.5)"
+      },
+      {
+        "id": "HLD_AWS_122",
+        "name": "CloudWatch metric filter must detect AWS Management Console authentication failures (CIS 3.6)"
+      },
+      {
+        "id": "HLD_AWS_123",
+        "name": "CloudWatch metric filter must detect disabling or deletion of KMS CMKs (CIS 3.7)"
+      },
+      {
+        "id": "HLD_AWS_124",
+        "name": "CloudWatch metric filter must detect S3 bucket policy changes (CIS 3.8)"
+      },
+      {
+        "id": "HLD_AWS_125",
+        "name": "CloudWatch metric filter must detect AWS Config configuration changes (CIS 3.9)"
+      },
+      {
+        "id": "HLD_AWS_126",
+        "name": "CloudWatch metric filter must detect security group changes (CIS 3.10)"
+      },
+      {
+        "id": "HLD_AWS_127",
+        "name": "CloudWatch metric filter must detect Network ACL changes (CIS 3.11)"
+      },
+      {
+        "id": "HLD_AWS_128",
+        "name": "CloudWatch metric filter must detect network gateway changes (CIS 3.12)"
+      },
+      {
+        "id": "HLD_AWS_129",
+        "name": "CloudWatch metric filter must detect route table changes (CIS 3.13)"
+      },
+      {
+        "id": "HLD_AWS_130",
+        "name": "CloudWatch metric filter must detect VPC changes (CIS 3.14)"
+      }
+    ],
+    "aws_cloudwatch_metric_alarm": [
+      {
+        "id": "HLD_AWS_075",
+        "name": "CloudWatch alarms must have actions enabled"
+      },
+      {
+        "id": "HLD_AWS_076",
+        "name": "CloudWatch alarms must have at least one alarm action configured"
+      }
+    ],
+    "aws_codebuild_project": [
+      {
+        "id": "HLD_AWS_064",
+        "name": "CodeBuild projects must use a customer-managed KMS encryption key"
+      },
+      {
+        "id": "HLD_AWS_065",
+        "name": "CodeBuild projects must have CloudWatch logging enabled"
+      },
+      {
+        "id": "HLD_AWS_095",
+        "name": "CodeBuild projects should not run in privileged mode"
+      },
+      {
+        "id": "HLD_AWS_096",
+        "name": "CodeBuild build timeout should not exceed 30 minutes"
+      },
+      {
+        "id": "HLD_AWS_097",
+        "name": "CodeBuild projects should not use the largest compute type without justification"
+      }
+    ],
+    "aws_codepipeline": [
+      {
+        "id": "HLD_AWS_098",
+        "name": "CodePipeline artifact store should use a customer-managed KMS key"
+      }
+    ],
+    "aws_cognito_user_pool": [
+      {
+        "id": "HLD_AWS_049",
+        "name": "Cognito user pools must require MFA"
+      },
+      {
+        "id": "HLD_AWS_050",
+        "name": "Cognito user pool password must be at least 8 characters"
+      },
+      {
+        "id": "HLD_AWS_051",
+        "name": "Cognito user pools must enable advanced security"
+      }
+    ],
+    "aws_config_configuration_recorder": [
+      {
+        "id": "HLD_AWS_160",
+        "name": "AWS Config recorder must capture all supported resource types"
+      }
+    ],
+    "aws_config_configuration_recorder_status": [
+      {
+        "id": "HLD_AWS_061",
+        "name": "AWS Config recording must be enabled"
+      }
+    ],
+    "aws_dax_cluster": [
+      {
+        "id": "HLD_AWS_055",
+        "name": "DAX clusters must have server-side encryption enabled"
+      },
+      {
+        "id": "HLD_AWS_056",
+        "name": "DAX cluster endpoints must require TLS"
+      }
+    ],
+    "aws_db_instance": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      },
+      {
+        "id": "HLD_AWS_006",
+        "name": "Deletion protection must be enabled"
+      },
+      {
+        "id": "HLD_AWS_007",
+        "name": "Backup retention must be configured"
+      },
+      {
+        "id": "HLD_AWS_025",
+        "name": "RDS instances must be Multi-AZ for high availability"
+      },
+      {
+        "id": "HLD_AWS_026",
+        "name": "RDS instances must enable automatic minor version upgrades"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_048",
+        "name": "RDS instances and clusters should use IAM database authentication"
+      },
+      {
+        "id": "HLD_AWS_083",
+        "name": "RDS instances must not be publicly accessible"
+      },
+      {
+        "id": "HLD_AWS_084",
+        "name": "RDS instances and clusters must have deletion protection enabled"
+      },
+      {
+        "id": "HLD_AWS_099",
+        "name": "RDS instances must have automated backups enabled with sufficient retention"
+      },
+      {
+        "id": "HLD_AWS_100",
+        "name": "RDS instances should be deployed across multiple availability zones"
+      },
+      {
+        "id": "HLD_AWS_101",
+        "name": "RDS instances should allow automatic minor version upgrades"
+      },
+      {
+        "id": "HLD_AWS_111",
+        "name": "RDS instances should enable storage autoscaling"
+      },
+      {
+        "id": "HLD_AWS_155",
+        "name": "RDS instances must have enhanced monitoring enabled"
+      },
+      {
+        "id": "HLD_AWS_156",
+        "name": "RDS instances must have Performance Insights enabled"
+      },
+      {
+        "id": "HLD_AWS_162",
+        "name": "RDS, Aurora, DocumentDB, and Neptune clusters must encrypt storage at rest"
+      },
+      {
+        "id": "HLD_AWS_163",
+        "name": "RDS instances must export logs to CloudWatch"
+      },
+      {
+        "id": "HLD_TF_041",
+        "name": "Critical resources must enable lifecycle.prevent_destroy"
+      }
+    ],
+    "aws_db_security_group": [
+      {
+        "id": "HLD_AWS_137",
+        "name": "aws_db_security_group is deprecated \u2014 use VPC security groups"
+      }
+    ],
+    "aws_default_vpc": [
+      {
+        "id": "HLD_AWS_012",
+        "name": "Default VPC must not be used"
+      }
+    ],
+    "aws_dms_replication_instance": [
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      }
+    ],
+    "aws_docdb_cluster": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_002",
+        "name": "Encryption in transit enforced"
+      },
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_006",
+        "name": "Deletion protection must be enabled"
+      },
+      {
+        "id": "HLD_AWS_162",
+        "name": "RDS, Aurora, DocumentDB, and Neptune clusters must encrypt storage at rest"
+      },
+      {
+        "id": "HLD_AWS_171",
+        "name": "DocumentDB clusters must export logs to CloudWatch"
+      }
+    ],
+    "aws_dynamodb_table": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_006",
+        "name": "Deletion protection must be enabled"
+      },
+      {
+        "id": "HLD_AWS_007",
+        "name": "Backup retention must be configured"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_037",
+        "name": "DynamoDB point-in-time recovery must be enabled"
+      },
+      {
+        "id": "HLD_AWS_201",
+        "name": "DynamoDB tables must have point-in-time recovery enabled"
+      },
+      {
+        "id": "HLD_TF_041",
+        "name": "Critical resources must enable lifecycle.prevent_destroy"
+      }
+    ],
+    "aws_ebs_encryption_by_default": [
+      {
+        "id": "HLD_AWS_090",
+        "name": "EC2 EBS encryption by default must be enabled at the account level"
+      }
+    ],
+    "aws_ebs_snapshot_copy": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      }
+    ],
+    "aws_ebs_volume": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_110",
+        "name": "EBS volumes should use gp3 instead of gp2"
+      },
+      {
+        "id": "HLD_AWS_175",
+        "name": "EBS volumes must be encrypted"
+      }
+    ],
+    "aws_ecr_repository": [
+      {
+        "id": "HLD_AWS_009",
+        "name": "Versioning must be enabled"
+      },
+      {
+        "id": "HLD_AWS_027",
+        "name": "ECR repositories must scan images on push"
+      },
+      {
+        "id": "HLD_AWS_078",
+        "name": "ECR repositories must enforce image tag immutability"
+      },
+      {
+        "id": "HLD_AWS_146",
+        "name": "ECR repositories must have a lifecycle policy"
+      }
+    ],
+    "aws_ecs_cluster": [
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_189",
+        "name": "ECS clusters must not disable exec command logging"
+      }
+    ],
+    "aws_ecs_service": [
+      {
+        "id": "HLD_AWS_185",
+        "name": "ECS services must not assign public IP addresses automatically"
+      },
+      {
+        "id": "HLD_AWS_186",
+        "name": "ECS Fargate services must use the latest Fargate platform version"
+      }
+    ],
+    "aws_ecs_task_definition": [
+      {
+        "id": "HLD_AWS_013",
+        "name": "Containers must not run as privileged"
+      },
+      {
+        "id": "HLD_AWS_085",
+        "name": "ECS task definition containers must use a read-only root filesystem"
+      },
+      {
+        "id": "HLD_AWS_157",
+        "name": "ECS task definitions must not use host networking"
+      },
+      {
+        "id": "HLD_AWS_196",
+        "name": "ECS task definitions must not share the host PID namespace"
+      },
+      {
+        "id": "HLD_AWS_197",
+        "name": "ECS task definitions must not share the host IPC namespace"
+      }
+    ],
+    "aws_efs_access_point": [
+      {
+        "id": "HLD_AWS_203",
+        "name": "EFS access points must specify a POSIX user identity"
+      }
+    ],
+    "aws_efs_file_system": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      }
+    ],
+    "aws_eip": [
+      {
+        "id": "HLD_AWS_116",
+        "name": "Elastic IPs should be associated with an instance or network interface"
+      },
+      {
+        "id": "HLD_AWS_141",
+        "name": "aws_eip vpc argument is deprecated \u2014 argument must be absent"
+      }
+    ],
+    "aws_eks_cluster": [
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      },
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_028",
+        "name": "EKS clusters must have secrets encryption configured"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_040",
+        "name": "EKS cluster API endpoint must have private access enabled"
+      },
+      {
+        "id": "HLD_AWS_041",
+        "name": "EKS cluster API endpoint must not be publicly accessible"
+      },
+      {
+        "id": "HLD_AWS_082",
+        "name": "EKS clusters must have control plane logging enabled"
+      }
+    ],
+    "aws_elasticache_cluster": [
+      {
+        "id": "HLD_AWS_006",
+        "name": "Deletion protection must be enabled"
+      }
+    ],
+    "aws_elasticache_replication_group": [
+      {
+        "id": "HLD_AWS_002",
+        "name": "Encryption in transit enforced"
+      },
+      {
+        "id": "HLD_AWS_007",
+        "name": "Backup retention must be configured"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_033",
+        "name": "ElastiCache encryption at rest must be enabled"
+      },
+      {
+        "id": "HLD_AWS_034",
+        "name": "ElastiCache encryption in transit must be enabled"
+      },
+      {
+        "id": "HLD_AWS_104",
+        "name": "ElastiCache replication groups must enable at-rest encryption"
+      },
+      {
+        "id": "HLD_AWS_105",
+        "name": "ElastiCache replication groups must enable in-transit encryption"
+      },
+      {
+        "id": "HLD_AWS_106",
+        "name": "ElastiCache replication groups should require an auth token"
+      },
+      {
+        "id": "HLD_AWS_158",
+        "name": "ElastiCache replication groups must enable Multi-AZ"
+      },
+      {
+        "id": "HLD_AWS_165",
+        "name": "ElastiCache replication groups must retain snapshots for at least one day"
+      }
+    ],
+    "aws_elasticache_security_group": [
+      {
+        "id": "HLD_AWS_139",
+        "name": "aws_elasticache_security_group is deprecated \u2014 use VPC security groups"
+      }
+    ],
+    "aws_elasticsearch_domain": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_002",
+        "name": "Encryption in transit enforced"
+      },
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      },
+      {
+        "id": "HLD_AWS_035",
+        "name": "Elasticsearch/OpenSearch node-to-node encryption must be enabled"
+      },
+      {
+        "id": "HLD_AWS_036",
+        "name": "Elasticsearch/OpenSearch domains must be deployed in a VPC"
+      }
+    ],
+    "aws_emr_block_public_access_configuration": [
+      {
+        "id": "HLD_AWS_187",
+        "name": "EMR must be configured to block public access at the account level"
+      }
+    ],
+    "aws_emr_cluster": [
+      {
+        "id": "HLD_AWS_178",
+        "name": "EMR clusters must attach a security configuration"
+      }
+    ],
+    "aws_flow_log": [
+      {
+        "id": "HLD_AWS_031",
+        "name": "VPC flow logs must capture all traffic"
+      }
+    ],
+    "aws_fsx_lustre_file_system": [
+      {
+        "id": "HLD_AWS_073",
+        "name": "FSx for Lustre must use a customer-managed KMS key"
+      }
+    ],
+    "aws_fsx_windows_file_system": [
+      {
+        "id": "HLD_AWS_072",
+        "name": "FSx for Windows File Server must use a customer-managed KMS key"
+      }
+    ],
+    "aws_glue_crawler": [
+      {
+        "id": "HLD_AWS_199",
+        "name": "Glue crawlers must have a security configuration set"
+      }
+    ],
+    "aws_glue_data_catalog_encryption_settings": [
+      {
+        "id": "HLD_AWS_200",
+        "name": "Glue Data Catalog connection passwords must be encrypted"
+      }
+    ],
+    "aws_glue_job": [
+      {
+        "id": "HLD_AWS_074",
+        "name": "Glue jobs must have a security configuration set"
+      }
+    ],
+    "aws_guardduty_detector": [
+      {
+        "id": "HLD_AWS_060",
+        "name": "GuardDuty detectors must be enabled"
+      }
+    ],
+    "aws_iam_access_key": [
+      {
+        "id": "HLD_AWS_179",
+        "name": "IAM root user must not have access keys"
+      }
+    ],
+    "aws_iam_account_password_policy": [
+      {
+        "id": "HLD_AWS_015",
+        "name": "IAM password policy must enforce complexity and expiry"
+      },
+      {
+        "id": "HLD_AWS_016",
+        "name": "IAM password expiry must be 90 days or less"
+      },
+      {
+        "id": "HLD_AWS_017",
+        "name": "IAM password reuse prevention must be at least 5"
+      }
+    ],
+    "aws_iam_group_policy_attachment": [
+      {
+        "id": "HLD_AWS_181",
+        "name": "IAM principals must not be granted the AWS AdministratorAccess policy"
+      }
+    ],
+    "aws_iam_policy_attachment": [
+      {
+        "id": "HLD_AWS_140",
+        "name": "aws_iam_policy_attachment exclusively manages attachments \u2014 use targeted attachment resources"
+      }
+    ],
+    "aws_iam_role": [
+      {
+        "id": "HLD_AWS_152",
+        "name": "IAM role maximum session duration must not exceed 12 hours"
+      },
+      {
+        "id": "HLD_AWS_181",
+        "name": "IAM principals must not be granted the AWS AdministratorAccess policy"
+      },
+      {
+        "id": "HLD_AWS_208",
+        "name": "IAM roles must not have AdministratorAccess attached"
+      }
+    ],
+    "aws_iam_role_policy_attachment": [
+      {
+        "id": "HLD_AWS_181",
+        "name": "IAM principals must not be granted the AWS AdministratorAccess policy"
+      }
+    ],
+    "aws_iam_user": [
+      {
+        "id": "HLD_AWS_180",
+        "name": "IAM users must not be created directly; use roles or SSO instead"
+      }
+    ],
+    "aws_iam_user_policy_attachment": [
+      {
+        "id": "HLD_AWS_181",
+        "name": "IAM principals must not be granted the AWS AdministratorAccess policy"
+      }
+    ],
+    "aws_instance": [
+      {
+        "id": "HLD_AWS_011",
+        "name": "IMDSv2 must be required"
+      },
+      {
+        "id": "HLD_AWS_018",
+        "name": "EC2 instances must not have public IPs assigned automatically"
+      },
+      {
+        "id": "HLD_AWS_019",
+        "name": "EC2 detailed monitoring must be enabled"
+      },
+      {
+        "id": "HLD_AWS_020",
+        "name": "EC2 instances should be EBS-optimized"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_047",
+        "name": "EC2 instances must have termination protection enabled"
+      }
+    ],
+    "aws_kinesis_firehose_delivery_stream": [
+      {
+        "id": "HLD_AWS_045",
+        "name": "Kinesis Firehose delivery streams must have server-side encryption enabled"
+      }
+    ],
+    "aws_kinesis_stream": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_159",
+        "name": "Kinesis streams must use KMS server-side encryption"
+      }
+    ],
+    "aws_kms_key": [
+      {
+        "id": "HLD_AWS_008",
+        "name": "Key rotation must be enabled"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_087",
+        "name": "KMS keys must have a deletion window of at least 7 days"
+      },
+      {
+        "id": "HLD_TF_041",
+        "name": "Critical resources must enable lifecycle.prevent_destroy"
+      }
+    ],
+    "aws_lambda_function": [
+      {
+        "id": "HLD_AWS_021",
+        "name": "Lambda functions must have X-Ray tracing enabled"
+      },
+      {
+        "id": "HLD_AWS_022",
+        "name": "Lambda functions should run inside a VPC"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_042",
+        "name": "Lambda functions must use a KMS key to encrypt environment variables"
+      },
+      {
+        "id": "HLD_AWS_102",
+        "name": "Lambda functions should configure a dead-letter queue"
+      },
+      {
+        "id": "HLD_AWS_103",
+        "name": "Lambda functions should have X-Ray active tracing enabled"
+      },
+      {
+        "id": "HLD_AWS_115",
+        "name": "Lambda functions should not use the maximum memory allocation without justification"
+      },
+      {
+        "id": "HLD_AWS_190",
+        "name": "Lambda functions must have a concurrent execution limit configured"
+      },
+      {
+        "id": "HLD_AWS_191",
+        "name": "Lambda functions must not use deprecated runtimes"
+      },
+      {
+        "id": "HLD_AWS_192",
+        "name": "Lambda functions must have code signing configured"
+      }
+    ],
+    "aws_lambda_function_url": [
+      {
+        "id": "HLD_AWS_148",
+        "name": "Lambda function URLs must require authentication"
+      }
+    ],
+    "aws_lambda_permission": [
+      {
+        "id": "HLD_AWS_184",
+        "name": "Lambda function permissions must not allow public invocation"
+      }
+    ],
+    "aws_launch_configuration": [
+      {
+        "id": "HLD_AWS_011",
+        "name": "IMDSv2 must be required"
+      },
+      {
+        "id": "HLD_AWS_136",
+        "name": "aws_launch_configuration is deprecated \u2014 use aws_launch_template"
+      }
+    ],
+    "aws_launch_template": [
+      {
+        "id": "HLD_AWS_011",
+        "name": "IMDSv2 must be required"
+      },
+      {
+        "id": "HLD_AWS_018",
+        "name": "EC2 instances must not have public IPs assigned automatically"
+      },
+      {
+        "id": "HLD_AWS_093",
+        "name": "EC2 launch templates must set IMDS hop limit to 1"
+      }
+    ],
+    "aws_lb": [
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_086",
+        "name": "ALBs must drop invalid HTTP header fields"
+      },
+      {
+        "id": "HLD_AWS_089",
+        "name": "Load balancers must have access logging enabled"
+      },
+      {
+        "id": "HLD_AWS_164",
+        "name": "Application Load Balancers must have deletion protection enabled"
+      }
+    ],
+    "aws_lb_listener": [
+      {
+        "id": "HLD_AWS_002",
+        "name": "Encryption in transit enforced"
+      },
+      {
+        "id": "HLD_AWS_154",
+        "name": "ALB HTTP listeners must redirect to HTTPS"
+      }
+    ],
+    "aws_mq_broker": [
+      {
+        "id": "HLD_AWS_057",
+        "name": "MQ brokers must not be publicly accessible"
+      },
+      {
+        "id": "HLD_AWS_058",
+        "name": "MQ brokers must have audit logging enabled"
+      }
+    ],
+    "aws_msk_cluster": [
+      {
+        "id": "HLD_AWS_002",
+        "name": "Encryption in transit enforced"
+      },
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_046",
+        "name": "MSK clusters must enforce TLS for in-transit encryption"
+      },
+      {
+        "id": "HLD_AWS_169",
+        "name": "MSK clusters must have broker logging configured"
+      },
+      {
+        "id": "HLD_AWS_170",
+        "name": "MSK clusters must use a customer-managed KMS key for encryption at rest"
+      },
+      {
+        "id": "HLD_AWS_206",
+        "name": "MSK clusters must encrypt broker-to-broker communication"
+      }
+    ],
+    "aws_nat_gateway": [
+      {
+        "id": "HLD_AWS_113",
+        "name": "Multiple NAT gateways should be used only when cross-AZ resilience is required"
+      }
+    ],
+    "aws_neptune_cluster": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_006",
+        "name": "Deletion protection must be enabled"
+      },
+      {
+        "id": "HLD_AWS_162",
+        "name": "RDS, Aurora, DocumentDB, and Neptune clusters must encrypt storage at rest"
+      },
+      {
+        "id": "HLD_AWS_166",
+        "name": "Neptune clusters must have deletion protection enabled"
+      },
+      {
+        "id": "HLD_AWS_167",
+        "name": "Neptune clusters must retain automated backups for at least 7 days"
+      },
+      {
+        "id": "HLD_AWS_168",
+        "name": "Neptune clusters must enable IAM database authentication"
+      }
+    ],
+    "aws_opensearch_domain": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_002",
+        "name": "Encryption in transit enforced"
+      },
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      },
+      {
+        "id": "HLD_AWS_035",
+        "name": "Elasticsearch/OpenSearch node-to-node encryption must be enabled"
+      },
+      {
+        "id": "HLD_AWS_036",
+        "name": "Elasticsearch/OpenSearch domains must be deployed in a VPC"
+      }
+    ],
+    "aws_qldb_ledger": [
+      {
+        "id": "HLD_AWS_176",
+        "name": "QLDB ledgers must have deletion protection enabled"
+      }
+    ],
+    "aws_rds_cluster": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      },
+      {
+        "id": "HLD_AWS_006",
+        "name": "Deletion protection must be enabled"
+      },
+      {
+        "id": "HLD_AWS_007",
+        "name": "Backup retention must be configured"
+      },
+      {
+        "id": "HLD_AWS_048",
+        "name": "RDS instances and clusters should use IAM database authentication"
+      },
+      {
+        "id": "HLD_AWS_084",
+        "name": "RDS instances and clusters must have deletion protection enabled"
+      },
+      {
+        "id": "HLD_AWS_099",
+        "name": "RDS instances must have automated backups enabled with sufficient retention"
+      },
+      {
+        "id": "HLD_AWS_162",
+        "name": "RDS, Aurora, DocumentDB, and Neptune clusters must encrypt storage at rest"
+      },
+      {
+        "id": "HLD_TF_041",
+        "name": "Critical resources must enable lifecycle.prevent_destroy"
+      }
+    ],
+    "aws_rds_instance": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      },
+      {
+        "id": "HLD_AWS_006",
+        "name": "Deletion protection must be enabled"
+      },
+      {
+        "id": "HLD_AWS_007",
+        "name": "Backup retention must be configured"
+      },
+      {
+        "id": "HLD_AWS_025",
+        "name": "RDS instances must be Multi-AZ for high availability"
+      },
+      {
+        "id": "HLD_AWS_026",
+        "name": "RDS instances must enable automatic minor version upgrades"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_083",
+        "name": "RDS instances must not be publicly accessible"
+      }
+    ],
+    "aws_redshift_cluster": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_002",
+        "name": "Encryption in transit enforced"
+      },
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      },
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_044",
+        "name": "Redshift clusters must not be publicly accessible"
+      },
+      {
+        "id": "HLD_AWS_172",
+        "name": "Redshift clusters must have audit logging enabled"
+      },
+      {
+        "id": "HLD_AWS_173",
+        "name": "Redshift clusters must allow automatic version upgrades"
+      }
+    ],
+    "aws_redshift_security_group": [
+      {
+        "id": "HLD_AWS_138",
+        "name": "aws_redshift_security_group is deprecated \u2014 use VPC security groups"
+      }
+    ],
+    "aws_route53_zone": [
+      {
+        "id": "HLD_AWS_198",
+        "name": "Route53 hosted zones should enable DNSSEC signing"
+      }
+    ],
+    "aws_s3_bucket": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_005",
+        "name": "Logging must be enabled"
+      },
+      {
+        "id": "HLD_AWS_009",
+        "name": "Versioning must be enabled"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_131",
+        "name": "S3 buckets must have an aws_s3_bucket_public_access_block resource"
+      },
+      {
+        "id": "HLD_AWS_132",
+        "name": "S3 buckets must have an aws_s3_bucket_server_side_encryption_configuration resource"
+      },
+      {
+        "id": "HLD_AWS_144",
+        "name": "S3 buckets must have an aws_s3_bucket_logging resource"
+      },
+      {
+        "id": "HLD_AWS_145",
+        "name": "S3 buckets must have an aws_s3_bucket_versioning resource"
+      },
+      {
+        "id": "HLD_AWS_153",
+        "name": "S3 buckets must have an aws_s3_bucket_lifecycle_configuration resource"
+      }
+    ],
+    "aws_s3_bucket_lifecycle_configuration": [
+      {
+        "id": "HLD_AWS_114",
+        "name": "S3 buckets should have lifecycle rules to control storage costs"
+      }
+    ],
+    "aws_s3_bucket_object": [
+      {
+        "id": "HLD_AWS_135",
+        "name": "aws_s3_bucket_object is deprecated \u2014 use aws_s3_object"
+      }
+    ],
+    "aws_s3_bucket_public_access_block": [
+      {
+        "id": "HLD_AWS_003",
+        "name": "Public access must be blocked"
+      },
+      {
+        "id": "HLD_AWS_004",
+        "name": "S3 public bucket policy must be restricted"
+      }
+    ],
+    "aws_sagemaker_notebook_instance": [
+      {
+        "id": "HLD_AWS_062",
+        "name": "SageMaker notebook instances must not allow direct internet access"
+      },
+      {
+        "id": "HLD_AWS_063",
+        "name": "SageMaker notebook instances must use a KMS key for encryption"
+      },
+      {
+        "id": "HLD_AWS_195",
+        "name": "SageMaker notebook instances must disable root access"
+      }
+    ],
+    "aws_secretsmanager_secret": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_030",
+        "name": "Secrets Manager secrets must have a recovery window of at least 7 days"
+      },
+      {
+        "id": "HLD_AWS_081",
+        "name": "Secrets Manager secrets must have automatic rotation enabled"
+      },
+      {
+        "id": "HLD_AWS_177",
+        "name": "Secrets Manager secrets must use a customer-managed KMS key"
+      }
+    ],
+    "aws_security_group": [
+      {
+        "id": "HLD_AWS_010",
+        "name": "SSH must not be open to the internet"
+      },
+      {
+        "id": "HLD_AWS_032",
+        "name": "RDP must not be open to the internet"
+      },
+      {
+        "id": "HLD_AWS_092",
+        "name": "Security groups must not allow unrestricted egress to all ports"
+      },
+      {
+        "id": "HLD_AWS_182",
+        "name": "Security groups must not allow HTTP (port 80) from the internet"
+      },
+      {
+        "id": "HLD_AWS_183",
+        "name": "Security groups must not allow all ports ingress from the internet"
+      },
+      {
+        "id": "HLD_AWS_207",
+        "name": "Security groups must not allow unrestricted SSH ingress via separate rule resource"
+      }
+    ],
+    "aws_sfn_state_machine": [
+      {
+        "id": "HLD_AWS_068",
+        "name": "Step Functions state machines must have logging enabled"
+      },
+      {
+        "id": "HLD_AWS_069",
+        "name": "Step Functions state machines must have X-Ray tracing enabled"
+      }
+    ],
+    "aws_sns_topic": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_107",
+        "name": "SNS topics must use a KMS key for server-side encryption"
+      }
+    ],
+    "aws_sqs_queue": [
+      {
+        "id": "HLD_AWS_001",
+        "name": "Encryption at rest enabled"
+      },
+      {
+        "id": "HLD_AWS_029",
+        "name": "Resources must have tags configured"
+      },
+      {
+        "id": "HLD_AWS_108",
+        "name": "SQS queues must have server-side encryption enabled"
+      }
+    ],
+    "aws_ssm_document": [
+      {
+        "id": "HLD_AWS_188",
+        "name": "SSM documents must not be publicly shared"
+      }
+    ],
+    "aws_ssm_parameter": [
+      {
+        "id": "HLD_AWS_091",
+        "name": "SSM parameters storing secrets must use the SecureString type"
+      }
+    ],
+    "aws_subnet": [
+      {
+        "id": "HLD_AWS_052",
+        "name": "Subnets must not auto-assign public IP addresses"
+      }
+    ],
+    "aws_transfer_server": [
+      {
+        "id": "HLD_AWS_204",
+        "name": "Transfer Server must not use unencrypted FTP protocol"
+      }
+    ],
+    "aws_vpc": [
+      {
+        "id": "HLD_AWS_053",
+        "name": "VPC must have DNS support enabled"
+      },
+      {
+        "id": "HLD_AWS_054",
+        "name": "VPC must have DNS hostnames enabled"
+      },
+      {
+        "id": "HLD_AWS_133",
+        "name": "Every VPC must have an aws_flow_log resource"
+      }
+    ],
+    "aws_wafv2_web_acl": [
+      {
+        "id": "HLD_AWS_070",
+        "name": "WAFv2 web ACLs must have CloudWatch metrics enabled"
+      },
+      {
+        "id": "HLD_AWS_071",
+        "name": "WAFv2 web ACLs must have sampled requests enabled"
+      },
+      {
+        "id": "HLD_AWS_134",
+        "name": "WAFv2 web ACLs must be associated with a resource via aws_wafv2_web_acl_association"
+      },
+      {
+        "id": "HLD_AWS_147",
+        "name": "WAFv2 web ACLs must have logging enabled"
+      }
+    ],
+    "azurerm_api_management": [
+      {
+        "id": "HLD_AZ_050",
+        "name": "Azure API Management must disable public network access"
+      }
+    ],
+    "azurerm_app_service": [
+      {
+        "id": "HLD_AZ_011",
+        "name": "Azure App Service / Web Apps must enforce HTTPS-only"
+      },
+      {
+        "id": "HLD_AZ_012",
+        "name": "Azure App Service must use a managed identity"
+      },
+      {
+        "id": "HLD_AZ_018",
+        "name": "Azure App Service must enforce TLS 1.2 as the minimum version"
+      },
+      {
+        "id": "HLD_AZ_049",
+        "name": "App Service CORS configuration must not allow all origins"
+      }
+    ],
+    "azurerm_application_gateway": [
+      {
+        "id": "HLD_AZ_026",
+        "name": "Application Gateway WAF must be in Prevention mode"
+      }
+    ],
+    "azurerm_cognitive_account": [
+      {
+        "id": "HLD_AZ_051",
+        "name": "Azure Cognitive Services accounts must disable public network access"
+      }
+    ],
+    "azurerm_container_registry": [
+      {
+        "id": "HLD_AZ_016",
+        "name": "Azure Container Registry admin user must be disabled"
+      },
+      {
+        "id": "HLD_AZ_046",
+        "name": "Azure Container Registry must deny public network access by default"
+      }
+    ],
+    "azurerm_cosmosdb_account": [
+      {
+        "id": "HLD_AZ_023",
+        "name": "Cosmos DB accounts must use a customer-managed key for encryption"
+      },
+      {
+        "id": "HLD_AZ_036",
+        "name": "Azure Cosmos DB accounts must disable public network access"
+      }
+    ],
+    "azurerm_data_factory": [
+      {
+        "id": "HLD_AZ_048",
+        "name": "Azure Data Factory must disable public network access"
+      }
+    ],
+    "azurerm_eventhub_namespace": [
+      {
+        "id": "HLD_AZ_052",
+        "name": "EventHub namespaces must enforce a minimum TLS version of 1.2"
+      }
+    ],
+    "azurerm_key_vault": [
+      {
+        "id": "HLD_AZ_005",
+        "name": "Azure Key Vault must have soft delete enabled"
+      },
+      {
+        "id": "HLD_AZ_006",
+        "name": "Azure Key Vault must have purge protection enabled"
+      },
+      {
+        "id": "HLD_AZ_007",
+        "name": "Azure Key Vault should restrict network access with firewall rules"
+      },
+      {
+        "id": "HLD_AZ_008",
+        "name": "Azure Key Vault should use RBAC for access control rather than access policies"
+      },
+      {
+        "id": "HLD_AZ_033",
+        "name": "Azure Key Vault must disable public network access"
+      }
+    ],
+    "azurerm_key_vault_key": [
+      {
+        "id": "HLD_AZ_024",
+        "name": "Key Vault keys must have an expiration date"
+      }
+    ],
+    "azurerm_kubernetes_cluster": [
+      {
+        "id": "HLD_AZ_013",
+        "name": "AKS clusters must have Kubernetes RBAC enabled"
+      },
+      {
+        "id": "HLD_AZ_014",
+        "name": "AKS clusters must configure a Kubernetes network policy"
+      },
+      {
+        "id": "HLD_AZ_025",
+        "name": "AKS clusters must restrict API server access to authorized IP ranges"
+      },
+      {
+        "id": "HLD_AZ_030",
+        "name": "AKS clusters must have Microsoft Defender enabled"
+      },
+      {
+        "id": "HLD_AZ_031",
+        "name": "AKS clusters must disable the local administrator account"
+      },
+      {
+        "id": "HLD_AZ_032",
+        "name": "AKS cluster nodes must not have public IP addresses"
+      }
+    ],
+    "azurerm_lb": [
+      {
+        "id": "HLD_AZ_027",
+        "name": "Azure Load Balancers must use the Standard SKU"
+      }
+    ],
+    "azurerm_linux_function_app": [
+      {
+        "id": "HLD_AZ_011",
+        "name": "Azure App Service / Web Apps must enforce HTTPS-only"
+      },
+      {
+        "id": "HLD_AZ_018",
+        "name": "Azure App Service must enforce TLS 1.2 as the minimum version"
+      },
+      {
+        "id": "HLD_AZ_019",
+        "name": "App Services must have remote debugging disabled"
+      },
+      {
+        "id": "HLD_AZ_020",
+        "name": "App Services must restrict FTP deployments to FTPS or disable them"
+      }
+    ],
+    "azurerm_linux_virtual_machine": [
+      {
+        "id": "HLD_AZ_039",
+        "name": "Linux virtual machines must disable password authentication"
+      }
+    ],
+    "azurerm_linux_web_app": [
+      {
+        "id": "HLD_AZ_011",
+        "name": "Azure App Service / Web Apps must enforce HTTPS-only"
+      },
+      {
+        "id": "HLD_AZ_012",
+        "name": "Azure App Service must use a managed identity"
+      },
+      {
+        "id": "HLD_AZ_018",
+        "name": "Azure App Service must enforce TLS 1.2 as the minimum version"
+      },
+      {
+        "id": "HLD_AZ_019",
+        "name": "App Services must have remote debugging disabled"
+      },
+      {
+        "id": "HLD_AZ_020",
+        "name": "App Services must restrict FTP deployments to FTPS or disable them"
+      },
+      {
+        "id": "HLD_AZ_038",
+        "name": "App Services must disable public network access"
+      },
+      {
+        "id": "HLD_AZ_049",
+        "name": "App Service CORS configuration must not allow all origins"
+      }
+    ],
+    "azurerm_managed_disk": [
+      {
+        "id": "HLD_AZ_045",
+        "name": "Azure managed disks should use a customer-managed encryption key"
+      }
+    ],
+    "azurerm_mssql_firewall_rule": [
+      {
+        "id": "HLD_AZ_042",
+        "name": "MSSQL firewall rules must not allow unrestricted internet access"
+      }
+    ],
+    "azurerm_mssql_server": [
+      {
+        "id": "HLD_AZ_015",
+        "name": "Azure SQL / MSSQL servers must have an extended auditing policy"
+      },
+      {
+        "id": "HLD_AZ_028",
+        "name": "MSSQL servers must have a vulnerability assessment configured"
+      },
+      {
+        "id": "HLD_AZ_041",
+        "name": "MSSQL servers must have a security alert policy (threat detection) configured"
+      },
+      {
+        "id": "HLD_AZ_047",
+        "name": "Azure SQL Server must enforce a minimum TLS version of 1.2"
+      }
+    ],
+    "azurerm_mysql_flexible_server": [
+      {
+        "id": "HLD_AZ_035",
+        "name": "MySQL servers must disable public network access"
+      }
+    ],
+    "azurerm_mysql_server": [
+      {
+        "id": "HLD_AZ_022",
+        "name": "MySQL servers must enforce SSL connections"
+      },
+      {
+        "id": "HLD_AZ_035",
+        "name": "MySQL servers must disable public network access"
+      }
+    ],
+    "azurerm_network_security_rule": [
+      {
+        "id": "HLD_AZ_009",
+        "name": "Network Security Groups must not allow unrestricted inbound SSH from the internet"
+      },
+      {
+        "id": "HLD_AZ_010",
+        "name": "Network Security Groups must not allow unrestricted inbound RDP from the internet"
+      }
+    ],
+    "azurerm_postgresql_flexible_server": [
+      {
+        "id": "HLD_AZ_021",
+        "name": "PostgreSQL servers must enforce SSL connections"
+      },
+      {
+        "id": "HLD_AZ_034",
+        "name": "PostgreSQL servers must disable public network access"
+      }
+    ],
+    "azurerm_postgresql_server": [
+      {
+        "id": "HLD_AZ_021",
+        "name": "PostgreSQL servers must enforce SSL connections"
+      },
+      {
+        "id": "HLD_AZ_029",
+        "name": "PostgreSQL servers must have threat detection enabled"
+      },
+      {
+        "id": "HLD_AZ_034",
+        "name": "PostgreSQL servers must disable public network access"
+      }
+    ],
+    "azurerm_redis_cache": [
+      {
+        "id": "HLD_AZ_017",
+        "name": "Azure Redis Cache must disable the non-SSL port"
+      }
+    ],
+    "azurerm_servicebus_namespace": [
+      {
+        "id": "HLD_AZ_053",
+        "name": "Service Bus namespaces must enforce a minimum TLS version of 1.2"
+      }
+    ],
+    "azurerm_sql_firewall_rule": [
+      {
+        "id": "HLD_AZ_042",
+        "name": "MSSQL firewall rules must not allow unrestricted internet access"
+      }
+    ],
+    "azurerm_sql_server": [
+      {
+        "id": "HLD_AZ_015",
+        "name": "Azure SQL / MSSQL servers must have an extended auditing policy"
+      }
+    ],
+    "azurerm_storage_account": [
+      {
+        "id": "HLD_AZ_001",
+        "name": "Azure Storage accounts must enforce HTTPS-only traffic"
+      },
+      {
+        "id": "HLD_AZ_002",
+        "name": "Azure Storage accounts must enforce a minimum TLS version of 1.2"
+      },
+      {
+        "id": "HLD_AZ_003",
+        "name": "Azure Storage accounts must not allow public blob access"
+      },
+      {
+        "id": "HLD_AZ_004",
+        "name": "Azure Storage accounts should enable infrastructure encryption"
+      },
+      {
+        "id": "HLD_AZ_037",
+        "name": "Storage accounts must deny access by default in network rules"
+      },
+      {
+        "id": "HLD_AZ_043",
+        "name": "Storage account blob soft delete must be enabled with a retention of at least 7 days"
+      },
+      {
+        "id": "HLD_AZ_044",
+        "name": "Storage account blob versioning must be enabled"
+      }
+    ],
+    "azurerm_windows_function_app": [
+      {
+        "id": "HLD_AZ_011",
+        "name": "Azure App Service / Web Apps must enforce HTTPS-only"
+      },
+      {
+        "id": "HLD_AZ_018",
+        "name": "Azure App Service must enforce TLS 1.2 as the minimum version"
+      },
+      {
+        "id": "HLD_AZ_019",
+        "name": "App Services must have remote debugging disabled"
+      },
+      {
+        "id": "HLD_AZ_020",
+        "name": "App Services must restrict FTP deployments to FTPS or disable them"
+      }
+    ],
+    "azurerm_windows_virtual_machine": [
+      {
+        "id": "HLD_AZ_040",
+        "name": "Windows virtual machines must have automatic updates enabled"
+      }
+    ],
+    "azurerm_windows_web_app": [
+      {
+        "id": "HLD_AZ_011",
+        "name": "Azure App Service / Web Apps must enforce HTTPS-only"
+      },
+      {
+        "id": "HLD_AZ_012",
+        "name": "Azure App Service must use a managed identity"
+      },
+      {
+        "id": "HLD_AZ_018",
+        "name": "Azure App Service must enforce TLS 1.2 as the minimum version"
+      },
+      {
+        "id": "HLD_AZ_019",
+        "name": "App Services must have remote debugging disabled"
+      },
+      {
+        "id": "HLD_AZ_020",
+        "name": "App Services must restrict FTP deployments to FTPS or disable them"
+      },
+      {
+        "id": "HLD_AZ_038",
+        "name": "App Services must disable public network access"
+      },
+      {
+        "id": "HLD_AZ_049",
+        "name": "App Service CORS configuration must not allow all origins"
+      }
+    ],
+    "data.*": [
+      {
+        "id": "HLD_TF_039",
+        "name": "Data sources must be referenced within the module"
+      }
+    ],
+    "data.aws_iam_policy_document": [
+      {
+        "id": "HLD_AWS_142",
+        "name": "IAM policy document Allow statements must not use wildcard actions"
+      },
+      {
+        "id": "HLD_AWS_143",
+        "name": "IAM policy document statements must not use a wildcard principal"
+      }
+    ],
+    "gha_aws_auth": [
+      {
+        "id": "HLD_CI_001",
+        "name": "GitHub Actions AWS authentication should use OIDC role assumption not static keys"
+      }
+    ],
+    "gha_azure_auth": [
+      {
+        "id": "HLD_CI_003",
+        "name": "GitHub Actions Azure authentication should use OIDC not a service principal JSON secret"
+      }
+    ],
+    "gha_gcp_auth": [
+      {
+        "id": "HLD_GCP_042",
+        "name": "Google Cloud authentication should use Workload Identity Federation"
+      }
+    ],
+    "gha_job": [
+      {
+        "id": "HLD_CI_006",
+        "name": "GitHub Actions jobs should declare an explicit timeout"
+      },
+      {
+        "id": "HLD_CI_010",
+        "name": "Cloud auth jobs should declare explicit per-job permissions"
+      },
+      {
+        "id": "HLD_CI_012",
+        "name": "Warn on self-hosted runners"
+      }
+    ],
+    "gha_step": [
+      {
+        "id": "HLD_CI_004",
+        "name": "GitHub Actions steps should be pinned to a commit SHA"
+      },
+      {
+        "id": "HLD_CI_009",
+        "name": "GitHub Actions steps must specify a version ref"
+      },
+      {
+        "id": "HLD_CI_013",
+        "name": "Steps should not expose secrets through env variables"
+      }
+    ],
+    "gha_workflow": [
+      {
+        "id": "HLD_CI_005",
+        "name": "GitHub Actions workflow must not use permissions write-all"
+      },
+      {
+        "id": "HLD_CI_007",
+        "name": "GitHub Actions workflow must declare a top-level permissions block"
+      },
+      {
+        "id": "HLD_CI_008",
+        "name": "GitHub Actions workflow must not use dangerous trigger combinations"
+      },
+      {
+        "id": "HLD_CI_011",
+        "name": "Terraform workflows should set a concurrency group"
+      }
+    ],
+    "gitlab_image": [
+      {
+        "id": "HLD_GL_001",
+        "name": "GitLab CI images should be pinned to a digest"
+      }
+    ],
+    "gitlab_job": [
+      {
+        "id": "HLD_GL_002",
+        "name": "GitLab CI jobs should declare a timeout"
+      },
+      {
+        "id": "HLD_GL_003",
+        "name": "GitLab CI jobs should not silently allow failure"
+      }
+    ],
+    "google_artifact_registry_repository": [
+      {
+        "id": "HLD_GCP_060",
+        "name": "Artifact Registry repositories should use customer-managed encryption keys"
+      },
+      {
+        "id": "HLD_GCP_071",
+        "name": "Artifact Registry remote repositories must not proxy external registries"
+      }
+    ],
+    "google_artifact_registry_repository_iam_member": [
+      {
+        "id": "HLD_GCP_024",
+        "name": "Artifact Registry repositories must not grant public access"
+      }
+    ],
+    "google_bigquery_dataset": [
+      {
+        "id": "HLD_GCP_019",
+        "name": "GCP resources must have labels configured"
+      },
+      {
+        "id": "HLD_GCP_067",
+        "name": "BigQuery tables and datasets should use customer-managed encryption keys"
+      }
+    ],
+    "google_bigquery_dataset_access": [
+      {
+        "id": "HLD_GCP_020",
+        "name": "BigQuery datasets must not allow public access"
+      }
+    ],
+    "google_bigquery_dataset_iam_binding": [
+      {
+        "id": "HLD_GCP_020",
+        "name": "BigQuery datasets must not allow public access"
+      }
+    ],
+    "google_bigquery_dataset_iam_member": [
+      {
+        "id": "HLD_GCP_020",
+        "name": "BigQuery datasets must not allow public access"
+      }
+    ],
+    "google_bigquery_table": [
+      {
+        "id": "HLD_GCP_067",
+        "name": "BigQuery tables and datasets should use customer-managed encryption keys"
+      },
+      {
+        "id": "HLD_GCP_082",
+        "name": "BigQuery tables should have deletion protection enabled"
+      }
+    ],
+    "google_cloud_run_service": [
+      {
+        "id": "HLD_GCP_084",
+        "name": "Cloud Run services must not use the default Compute Engine service account"
+      }
+    ],
+    "google_cloud_run_service_iam_member": [
+      {
+        "id": "HLD_GCP_023",
+        "name": "Cloud Run services must not allow unauthenticated invocations"
+      }
+    ],
+    "google_cloud_run_v2_service": [
+      {
+        "id": "HLD_GCP_084",
+        "name": "Cloud Run services must not use the default Compute Engine service account"
+      }
+    ],
+    "google_cloud_run_v2_service_iam_member": [
+      {
+        "id": "HLD_GCP_023",
+        "name": "Cloud Run services must not allow unauthenticated invocations"
+      }
+    ],
+    "google_cloudfunctions2_function": [
+      {
+        "id": "HLD_GCP_021",
+        "name": "Cloud Functions must restrict ingress to internal traffic only"
+      },
+      {
+        "id": "HLD_GCP_086",
+        "name": "Cloud Functions should use a customer-managed encryption key"
+      }
+    ],
+    "google_cloudfunctions2_function_iam_member": [
+      {
+        "id": "HLD_GCP_085",
+        "name": "Cloud Functions IAM members must not grant access to allUsers or allAuthenticatedUsers"
+      }
+    ],
+    "google_cloudfunctions_function": [
+      {
+        "id": "HLD_GCP_019",
+        "name": "GCP resources must have labels configured"
+      },
+      {
+        "id": "HLD_GCP_021",
+        "name": "Cloud Functions must restrict ingress to internal traffic only"
+      },
+      {
+        "id": "HLD_GCP_086",
+        "name": "Cloud Functions should use a customer-managed encryption key"
+      }
+    ],
+    "google_cloudfunctions_function_iam_member": [
+      {
+        "id": "HLD_GCP_085",
+        "name": "Cloud Functions IAM members must not grant access to allUsers or allAuthenticatedUsers"
+      }
+    ],
+    "google_compute_address": [
+      {
+        "id": "HLD_GCP_090",
+        "name": "google_compute_address must declare address_type explicitly"
+      }
+    ],
+    "google_compute_backend_service": [
+      {
+        "id": "HLD_GCP_050",
+        "name": "GCP backend services must have a Cloud Armor security policy attached"
+      }
+    ],
+    "google_compute_disk": [
+      {
+        "id": "HLD_GCP_032",
+        "name": "GCE persistent disks must use a customer-managed encryption key"
+      }
+    ],
+    "google_compute_firewall": [
+      {
+        "id": "HLD_GCP_009",
+        "name": "GCP firewall rules must not allow unrestricted ingress from the internet"
+      },
+      {
+        "id": "HLD_GCP_047",
+        "name": "GCP firewall rules must have logging enabled"
+      },
+      {
+        "id": "HLD_GCP_074",
+        "name": "GCP firewall target_tags must match at least one compute instance tag"
+      },
+      {
+        "id": "HLD_GCP_081",
+        "name": "GCP firewall target_service_accounts must match at least one compute instance service account"
+      }
+    ],
+    "google_compute_instance": [
+      {
+        "id": "HLD_GCP_005",
+        "name": "GCE instances must not have external IP addresses"
+      },
+      {
+        "id": "HLD_GCP_006",
+        "name": "GCE instances must enable Shielded VM features"
+      },
+      {
+        "id": "HLD_GCP_007",
+        "name": "GCE instances must not have serial port access enabled"
+      },
+      {
+        "id": "HLD_GCP_008",
+        "name": "GCE instances must have OS Login enabled"
+      },
+      {
+        "id": "HLD_GCP_019",
+        "name": "GCP resources must have labels configured"
+      },
+      {
+        "id": "HLD_GCP_038",
+        "name": "GCE instances must not use the default service account"
+      },
+      {
+        "id": "HLD_GCP_064",
+        "name": "GCE instances must block project-wide SSH keys"
+      },
+      {
+        "id": "HLD_GCP_075",
+        "name": "GCE instances must not enable IP forwarding"
+      },
+      {
+        "id": "HLD_GCP_076",
+        "name": "GCE instances must not use the cloud-platform OAuth scope"
+      },
+      {
+        "id": "HLD_GCP_089",
+        "name": "GCE instances must enable Secure Boot"
+      },
+      {
+        "id": "HLD_GCP_091",
+        "name": "GCE instances must not use the default VPC network"
+      },
+      {
+        "id": "HLD_GCP_092",
+        "name": "GCE instance boot disk must use a customer-managed encryption key"
+      }
+    ],
+    "google_compute_instance_from_template": [
+      {
+        "id": "HLD_GCP_038",
+        "name": "GCE instances must not use the default service account"
+      },
+      {
+        "id": "HLD_GCP_076",
+        "name": "GCE instances must not use the cloud-platform OAuth scope"
+      }
+    ],
+    "google_compute_instance_template": [
+      {
+        "id": "HLD_GCP_005",
+        "name": "GCE instances must not have external IP addresses"
+      },
+      {
+        "id": "HLD_GCP_006",
+        "name": "GCE instances must enable Shielded VM features"
+      },
+      {
+        "id": "HLD_GCP_007",
+        "name": "GCE instances must not have serial port access enabled"
+      },
+      {
+        "id": "HLD_GCP_008",
+        "name": "GCE instances must have OS Login enabled"
+      },
+      {
+        "id": "HLD_GCP_064",
+        "name": "GCE instances must block project-wide SSH keys"
+      },
+      {
+        "id": "HLD_GCP_075",
+        "name": "GCE instances must not enable IP forwarding"
+      },
+      {
+        "id": "HLD_GCP_089",
+        "name": "GCE instances must enable Secure Boot"
+      },
+      {
+        "id": "HLD_GCP_091",
+        "name": "GCE instances must not use the default VPC network"
+      }
+    ],
+    "google_compute_network": [
+      {
+        "id": "HLD_GCP_028",
+        "name": "GCP VPC networks must not auto-create subnetworks"
+      },
+      {
+        "id": "HLD_GCP_093",
+        "name": "GCP VPC networks must have at least one explicit firewall rule"
+      },
+      {
+        "id": "HLD_PROPOSED_001",
+        "name": "GCP VPC networks must delete the default internet egress route on creation"
+      }
+    ],
+    "google_compute_router_nat": [
+      {
+        "id": "HLD_GCP_066",
+        "name": "Cloud NAT gateways must have logging enabled"
+      }
+    ],
+    "google_compute_ssl_policy": [
+      {
+        "id": "HLD_GCP_029",
+        "name": "GCP SSL policies must enforce a minimum of TLS 1.2"
+      }
+    ],
+    "google_compute_subnetwork": [
+      {
+        "id": "HLD_GCP_025",
+        "name": "GCP subnetworks must enable Private Google Access"
+      },
+      {
+        "id": "HLD_GCP_026",
+        "name": "GCP subnetworks must enable VPC flow logs"
+      },
+      {
+        "id": "HLD_GCP_040",
+        "name": "GCE subnetworks must enable VPC flow logs"
+      }
+    ],
+    "google_container_cluster": [
+      {
+        "id": "HLD_GCP_013",
+        "name": "GKE clusters must restrict master endpoint access"
+      },
+      {
+        "id": "HLD_GCP_014",
+        "name": "GKE clusters must enable Workload Identity"
+      },
+      {
+        "id": "HLD_GCP_015",
+        "name": "GKE clusters must enable Shielded Nodes"
+      },
+      {
+        "id": "HLD_GCP_016",
+        "name": "GKE clusters must have Cloud Logging enabled"
+      },
+      {
+        "id": "HLD_GCP_019",
+        "name": "GCP resources must have labels configured"
+      },
+      {
+        "id": "HLD_GCP_034",
+        "name": "GKE clusters must have network policy enabled"
+      },
+      {
+        "id": "HLD_GCP_035",
+        "name": "GKE clusters must not issue client certificates"
+      },
+      {
+        "id": "HLD_GCP_036",
+        "name": "GKE clusters must have legacy ABAC disabled"
+      },
+      {
+        "id": "HLD_GCP_045",
+        "name": "GKE clusters must enable Binary Authorization"
+      },
+      {
+        "id": "HLD_GCP_052",
+        "name": "GKE clusters must have a maintenance policy configured"
+      },
+      {
+        "id": "HLD_GCP_053",
+        "name": "GKE cluster control plane must not be accessible from 0.0.0.0/0"
+      },
+      {
+        "id": "HLD_GCP_054",
+        "name": "GKE clusters must have master authorized networks configured"
+      },
+      {
+        "id": "HLD_GCP_057",
+        "name": "GKE clusters must use a release channel for automatic upgrades"
+      },
+      {
+        "id": "HLD_GCP_061",
+        "name": "GKE clusters must encrypt Kubernetes secrets at rest"
+      },
+      {
+        "id": "HLD_GCP_062",
+        "name": "GKE cluster nodes must use private IP addresses"
+      },
+      {
+        "id": "HLD_GCP_063",
+        "name": "GKE clusters should enable confidential nodes"
+      },
+      {
+        "id": "HLD_GCP_065",
+        "name": "GKE cluster control plane should use a private endpoint"
+      }
+    ],
+    "google_container_node_pool": [
+      {
+        "id": "HLD_GCP_030",
+        "name": "GKE node pools must have automatic upgrades enabled"
+      },
+      {
+        "id": "HLD_GCP_031",
+        "name": "GKE node pools must have automatic repair enabled"
+      },
+      {
+        "id": "HLD_GCP_038",
+        "name": "GCE instances must not use the default service account"
+      },
+      {
+        "id": "HLD_GCP_058",
+        "name": "GKE node pool automatic upgrades must be enabled"
+      }
+    ],
+    "google_dns_managed_zone": [
+      {
+        "id": "HLD_GCP_027",
+        "name": "Cloud DNS managed zones must have DNSSEC enabled"
+      }
+    ],
+    "google_firestore_database": [
+      {
+        "id": "HLD_GCP_051",
+        "name": "Firestore databases must have deletion protection enabled"
+      },
+      {
+        "id": "HLD_GCP_083",
+        "name": "Firestore database must have GCP-level deletion protection enabled"
+      }
+    ],
+    "google_folder_iam_member": [
+      {
+        "id": "HLD_GCP_044",
+        "name": "GCP IAM bindings must not use primitive roles"
+      }
+    ],
+    "google_iam_workload_identity_pool_provider": [
+      {
+        "id": "HLD_GCP_080",
+        "name": "Workload identity pool provider must have an attribute condition"
+      }
+    ],
+    "google_iap_tunnel_instance_iam_binding": [
+      {
+        "id": "HLD_GCP_077",
+        "name": "IAP tunnel instance IAM must not grant public access"
+      }
+    ],
+    "google_iap_tunnel_instance_iam_member": [
+      {
+        "id": "HLD_GCP_077",
+        "name": "IAP tunnel instance IAM must not grant public access"
+      }
+    ],
+    "google_kms_crypto_key": [
+      {
+        "id": "HLD_GCP_017",
+        "name": "Cloud KMS keys must have automatic rotation configured"
+      },
+      {
+        "id": "HLD_GCP_019",
+        "name": "GCP resources must have labels configured"
+      },
+      {
+        "id": "HLD_TF_041",
+        "name": "Critical resources must enable lifecycle.prevent_destroy"
+      }
+    ],
+    "google_kms_crypto_key_iam_binding": [
+      {
+        "id": "HLD_GCP_069",
+        "name": "KMS crypto key IAM members must not grant access to allUsers or allAuthenticatedUsers"
+      }
+    ],
+    "google_kms_crypto_key_iam_member": [
+      {
+        "id": "HLD_GCP_069",
+        "name": "KMS crypto key IAM members must not grant access to allUsers or allAuthenticatedUsers"
+      },
+      {
+        "id": "HLD_GCP_070",
+        "name": "KMS crypto key IAM members must not grant the cloudkms.admin role"
+      }
+    ],
+    "google_kms_key_ring_iam_binding": [
+      {
+        "id": "HLD_GCP_073",
+        "name": "KMS key ring IAM must not grant access to allUsers or allAuthenticatedUsers"
+      }
+    ],
+    "google_kms_key_ring_iam_member": [
+      {
+        "id": "HLD_GCP_073",
+        "name": "KMS key ring IAM must not grant access to allUsers or allAuthenticatedUsers"
+      }
+    ],
+    "google_organization_iam_member": [
+      {
+        "id": "HLD_GCP_044",
+        "name": "GCP IAM bindings must not use primitive roles"
+      }
+    ],
+    "google_project": [
+      {
+        "id": "HLD_GCP_079",
+        "name": "GCP projects must not auto-create the default network"
+      }
+    ],
+    "google_project_iam_binding": [
+      {
+        "id": "HLD_GCP_018",
+        "name": "IAM bindings must not grant access to allUsers or allAuthenticatedUsers"
+      },
+      {
+        "id": "HLD_GCP_041",
+        "name": "Service accounts must not have project-level admin roles"
+      },
+      {
+        "id": "HLD_GCP_044",
+        "name": "GCP IAM bindings must not use primitive roles"
+      }
+    ],
+    "google_project_iam_member": [
+      {
+        "id": "HLD_GCP_018",
+        "name": "IAM bindings must not grant access to allUsers or allAuthenticatedUsers"
+      },
+      {
+        "id": "HLD_GCP_041",
+        "name": "Service accounts must not have project-level admin roles"
+      },
+      {
+        "id": "HLD_GCP_044",
+        "name": "GCP IAM bindings must not use primitive roles"
+      },
+      {
+        "id": "HLD_GCP_055",
+        "name": "Service accounts must not be granted admin or editor roles at the project level"
+      }
+    ],
+    "google_pubsub_topic": [
+      {
+        "id": "HLD_GCP_019",
+        "name": "GCP resources must have labels configured"
+      },
+      {
+        "id": "HLD_GCP_022",
+        "name": "Pub/Sub topics must be encrypted with a customer-managed key"
+      }
+    ],
+    "google_secret_manager_secret": [
+      {
+        "id": "HLD_GCP_033",
+        "name": "Secret Manager secrets must have replication explicitly configured"
+      }
+    ],
+    "google_service_account_iam_binding": [
+      {
+        "id": "HLD_GCP_078",
+        "name": "Service account IAM must not grant public access"
+      }
+    ],
+    "google_service_account_iam_member": [
+      {
+        "id": "HLD_GCP_078",
+        "name": "Service account IAM must not grant public access"
+      }
+    ],
+    "google_spanner_database": [
+      {
+        "id": "HLD_GCP_068",
+        "name": "Cloud Spanner databases should use customer-managed encryption keys"
+      }
+    ],
+    "google_sql_database_instance": [
+      {
+        "id": "HLD_GCP_010",
+        "name": "Cloud SQL instances must require SSL connections"
+      },
+      {
+        "id": "HLD_GCP_011",
+        "name": "Cloud SQL instances must have automated backups enabled"
+      },
+      {
+        "id": "HLD_GCP_012",
+        "name": "Cloud SQL instances must not have public IP addresses"
+      },
+      {
+        "id": "HLD_GCP_019",
+        "name": "GCP resources must have labels configured"
+      },
+      {
+        "id": "HLD_GCP_037",
+        "name": "Cloud SQL instances must enable automated backups"
+      },
+      {
+        "id": "HLD_GCP_046",
+        "name": "Cloud SQL instances must have deletion protection enabled"
+      },
+      {
+        "id": "HLD_GCP_048",
+        "name": "Cloud SQL instances must retain at least 7 automated backups"
+      },
+      {
+        "id": "HLD_GCP_049",
+        "name": "Cloud SQL instances must have point-in-time recovery enabled"
+      },
+      {
+        "id": "HLD_GCP_056",
+        "name": "Cloud SQL instances must not have a public IP address"
+      }
+    ],
+    "google_storage_bucket": [
+      {
+        "id": "HLD_GCP_001",
+        "name": "GCS buckets must use customer-managed encryption keys"
+      },
+      {
+        "id": "HLD_GCP_002",
+        "name": "GCS buckets must use uniform bucket-level access"
+      },
+      {
+        "id": "HLD_GCP_003",
+        "name": "GCS buckets must have access logging enabled"
+      },
+      {
+        "id": "HLD_GCP_004",
+        "name": "GCS buckets must have versioning enabled"
+      },
+      {
+        "id": "HLD_GCP_019",
+        "name": "GCP resources must have labels configured"
+      },
+      {
+        "id": "HLD_GCP_087",
+        "name": "GCS buckets must enforce public access prevention"
+      }
+    ],
+    "google_storage_bucket_acl": [
+      {
+        "id": "HLD_GCP_088",
+        "name": "GCS bucket ACLs must not grant public access"
+      }
+    ],
+    "google_storage_bucket_iam_binding": [
+      {
+        "id": "HLD_GCP_018",
+        "name": "IAM bindings must not grant access to allUsers or allAuthenticatedUsers"
+      },
+      {
+        "id": "HLD_GCP_039",
+        "name": "GCS buckets must not grant public read access via IAM"
+      }
+    ],
+    "google_storage_bucket_iam_member": [
+      {
+        "id": "HLD_GCP_018",
+        "name": "IAM bindings must not grant access to allUsers or allAuthenticatedUsers"
+      },
+      {
+        "id": "HLD_GCP_039",
+        "name": "GCS buckets must not grant public read access via IAM"
+      }
+    ],
+    "google_storage_default_object_acl": [
+      {
+        "id": "HLD_GCP_088",
+        "name": "GCS bucket ACLs must not grant public access"
+      }
+    ],
+    "kubernetes_deployment": [
+      {
+        "id": "HLD_AWS_013",
+        "name": "Containers must not run as privileged"
+      }
+    ],
+    "kubernetes_pod": [
+      {
+        "id": "HLD_AWS_013",
+        "name": "Containers must not run as privileged"
+      }
+    ],
+    "local": [
+      {
+        "id": "HLD_TF_023",
+        "name": "Local value blocks should be defined in locals.tf"
+      },
+      {
+        "id": "HLD_TF_038",
+        "name": "Locals must be referenced within the module"
+      },
+      {
+        "id": "HLD_TF_048",
+        "name": "Local value names must use snake_case"
+      }
+    ],
+    "module": [
+      {
+        "id": "HLD_TF_003",
+        "name": "Module version must be pinned"
+      },
+      {
+        "id": "HLD_TF_026",
+        "name": "Module source should not use deep relative paths"
+      },
+      {
+        "id": "HLD_TF_035",
+        "name": "Git module sources should not use floating branch references"
+      }
+    ],
+    "null_resource": [
+      {
+        "id": "HLD_TF_049",
+        "name": "null_resource is deprecated \u2014 use terraform_data"
+      }
+    ],
+    "output": [
+      {
+        "id": "HLD_TF_007",
+        "name": "Outputs must have a description"
+      },
+      {
+        "id": "HLD_TF_018",
+        "name": "Output blocks should be defined in outputs.tf"
+      },
+      {
+        "id": "HLD_TF_032",
+        "name": "Outputs should have a description"
+      },
+      {
+        "id": "HLD_TF_040",
+        "name": "Outputs with sensitive names must be marked sensitive"
+      },
+      {
+        "id": "HLD_TF_047",
+        "name": "Output names must use snake_case"
+      }
+    ],
+    "provider": [
+      {
+        "id": "HLD_GCP_043",
+        "name": "Google provider must not use inline service account key credentials"
+      },
+      {
+        "id": "HLD_GCP_059",
+        "name": "Google provider should use service account impersonation for least-privilege scoping"
+      },
+      {
+        "id": "HLD_GCP_072",
+        "name": "GCP provider should configure default_labels"
+      },
+      {
+        "id": "HLD_TF_009",
+        "name": "Provider blocks must not contain hardcoded credentials"
+      },
+      {
+        "id": "HLD_TF_013",
+        "name": "Provider assume_role must set an external_id"
+      },
+      {
+        "id": "HLD_TF_015",
+        "name": "AWS provider should configure default_tags"
+      },
+      {
+        "id": "HLD_TF_019",
+        "name": "Provider and terraform blocks should be defined in a dedicated config file"
+      },
+      {
+        "id": "HLD_TF_034",
+        "name": "Provider blocks must not use the deprecated version argument"
+      }
+    ],
+    "provider_requirement": [
+      {
+        "id": "HLD_TF_002",
+        "name": "Provider version must be pinned"
+      },
+      {
+        "id": "HLD_TF_008",
+        "name": "Provider source must be explicitly declared in required_providers"
+      },
+      {
+        "id": "HLD_TF_022",
+        "name": "Provider version constraints must not use wildcard (>=)"
+      },
+      {
+        "id": "HLD_TF_043",
+        "name": "AWS provider version constraint must allow only hashicorp/aws >= 5.0"
+      },
+      {
+        "id": "HLD_TF_044",
+        "name": "Google provider version constraint must allow only hashicorp/google >= 4.0"
+      },
+      {
+        "id": "HLD_TF_045",
+        "name": "Azure provider version constraint must allow only hashicorp/azurerm >= 3.0"
+      }
+    ],
+    "terraform": [
+      {
+        "id": "HLD_TF_001",
+        "name": "Terraform version must be pinned"
+      },
+      {
+        "id": "HLD_TF_004",
+        "name": "Remote backend must be configured"
+      },
+      {
+        "id": "HLD_TF_010",
+        "name": "Remote backend must have encryption enabled"
+      },
+      {
+        "id": "HLD_TF_011",
+        "name": "S3 backend must use DynamoDB for state locking"
+      },
+      {
+        "id": "HLD_TF_014",
+        "name": "S3 backend must specify a state file key"
+      },
+      {
+        "id": "HLD_TF_019",
+        "name": "Provider and terraform blocks should be defined in a dedicated config file"
+      },
+      {
+        "id": "HLD_TF_033",
+        "name": "Terraform block should declare a required_version constraint"
+      },
+      {
+        "id": "HLD_TF_042",
+        "name": "Terraform required_version constraint must allow only Terraform >= 1.5"
+      },
+      {
+        "id": "HLD_TF_054",
+        "name": "Terraform block must declare required_providers"
+      },
+      {
+        "id": "HLD_TF_055",
+        "name": "GCS backend must specify a bucket"
+      },
+      {
+        "id": "HLD_TF_056",
+        "name": "GCS backend must specify a prefix to avoid state collision"
+      }
+    ],
+    "tf_file": [
+      {
+        "id": "HLD_TF_025",
+        "name": "Files with many resources may become harder to maintain as the project grows"
+      },
+      {
+        "id": "HLD_TF_027",
+        "name": "Modules with many input variables may be doing too much"
+      }
+    ],
+    "variable": [
+      {
+        "id": "HLD_TF_006",
+        "name": "Variables must have a description"
+      },
+      {
+        "id": "HLD_TF_012",
+        "name": "Variables must declare a type"
+      },
+      {
+        "id": "HLD_TF_017",
+        "name": "Variable blocks should be defined in variables.tf"
+      },
+      {
+        "id": "HLD_TF_021",
+        "name": "Variables should have validation rules"
+      },
+      {
+        "id": "HLD_TF_031",
+        "name": "Variables should have a description"
+      },
+      {
+        "id": "HLD_TF_037",
+        "name": "Variables must be referenced within the module"
+      },
+      {
+        "id": "HLD_TF_046",
+        "name": "Variable names must use snake_case"
+      },
+      {
+        "id": "HLD_TF_050",
+        "name": "Variables with sensitive names must have sensitive = true"
+      }
+    ],
+    "workspace": [
+      {
+        "id": "HLD_TF_005",
+        "name": "Terraform lock file must be present"
+      },
+      {
+        "id": "HLD_TF_028",
+        "name": "Workspaces with many resources lead to slow plans and over-privileged pipelines"
+      },
+      {
+        "id": "HLD_TF_029",
+        "name": "Workspaces requiring many IAM permissions increase pipeline blast radius"
+      },
+      {
+        "id": "HLD_TF_030",
+        "name": "Workspaces touching many AWS services are harder to govern and riskier to deploy"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "policy_id": "HLD_GCP_092",
+      "policy_name": "GCE instance boot disk must use a customer-managed encryption key",
+      "principle": "encryption",
+      "remediation": "Set kms_key_self_link inside the boot_disk block:\n\n  resource \"google_compute_instance\" \"example\" {\n    boot_disk {\n      kms_key_self_link = google_kms_crypto_key.vm.id\n    }\n  }\n",
+      "resource": {
+        "end_line": 41,
+        "file": "google_compute_instance.instance_with_ip.tf",
+        "id": "google_compute_instance.instance_with_ip",
+        "line": 2,
+        "source": "resource \"google_compute_instance\" \"instance_with_ip\" {\n  #checkov:skip=CKV_GCP_38: \"Ensure VM disks for critical VMs are encrypted with Customer Supplied Encryption Keys (CSEK)\"\n  #checkov:skip=CKV_GCP_40: intent\n  name         = var.name\n  machine_type = var.machine_type\n  zone         = var.zone\n  project      = var.project\n\n  boot_disk {\n    initialize_params {\n      image = data.google_compute_image.debian.self_link\n    }\n  }\n\n  allow_stopping_for_update = true\n\n  shielded_instance_config {\n    enable_integrity_monitoring = true\n    enable_vtpm                 = true\n    enable_secure_boot          = true\n  }\n\n  network_interface {\n    network = var.network\n    access_config {\n      nat_ip = google_compute_address.static.address\n    }\n  }\n\n  metadata = {\n    block-project-ssh-keys = true\n    enable-oslogin         = true\n  }\n\n  service_account {\n    email  = google_service_account.instance.email\n    scopes = [\"cloud-platform\"]\n  }\n\n}",
+        "type": "google_compute_instance"
+      },
+      "result": "FAIL",
+      "severity": "HIGH",
+      "violation": {
+        "actual": null,
+        "attr_path": "boot_disk.kms_key_self_link",
+        "expected": "google_compute_instance.instance_with_ip: boot_disk.kms_key_self_link must not be null"
+      }
+    },
+    {
+      "policy_id": "HLD_GCP_019",
+      "policy_name": "GCP resources must have labels configured",
+      "principle": "governance",
+      "remediation": "Add the required labels to the `labels` block on the resource.",
+      "resource": {
+        "end_line": 41,
+        "file": "google_compute_instance.instance_with_ip.tf",
+        "id": "google_compute_instance.instance_with_ip",
+        "line": 2,
+        "source": "resource \"google_compute_instance\" \"instance_with_ip\" {\n  #checkov:skip=CKV_GCP_38: \"Ensure VM disks for critical VMs are encrypted with Customer Supplied Encryption Keys (CSEK)\"\n  #checkov:skip=CKV_GCP_40: intent\n  name         = var.name\n  machine_type = var.machine_type\n  zone         = var.zone\n  project      = var.project\n\n  boot_disk {\n    initialize_params {\n      image = data.google_compute_image.debian.self_link\n    }\n  }\n\n  allow_stopping_for_update = true\n\n  shielded_instance_config {\n    enable_integrity_monitoring = true\n    enable_vtpm                 = true\n    enable_secure_boot          = true\n  }\n\n  network_interface {\n    network = var.network\n    access_config {\n      nat_ip = google_compute_address.static.address\n    }\n  }\n\n  metadata = {\n    block-project-ssh-keys = true\n    enable-oslogin         = true\n  }\n\n  service_account {\n    email  = google_service_account.instance.email\n    scopes = [\"cloud-platform\"]\n  }\n\n}",
+        "type": "google_compute_instance"
+      },
+      "result": "FAIL",
+      "severity": "LOW",
+      "violation": {
+        "actual": null,
+        "attr_path": "labels",
+        "expected": "google_compute_instance.instance_with_ip: labels must not be null"
+      }
+    }
+  ],
+  "policy_catalog": [
+    {
+      "id": "HLD_AWS_001",
+      "name": "Encryption at rest enabled",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_cloudtrail",
+        "aws_db_instance",
+        "aws_docdb_cluster",
+        "aws_dynamodb_table",
+        "aws_ebs_snapshot_copy",
+        "aws_ebs_volume",
+        "aws_efs_file_system",
+        "aws_elasticsearch_domain",
+        "aws_kinesis_stream",
+        "aws_neptune_cluster",
+        "aws_opensearch_domain",
+        "aws_rds_cluster",
+        "aws_rds_instance",
+        "aws_redshift_cluster",
+        "aws_s3_bucket",
+        "aws_secretsmanager_secret",
+        "aws_sns_topic",
+        "aws_sqs_queue"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_002",
+      "name": "Encryption in transit enforced",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_docdb_cluster",
+        "aws_elasticache_replication_group",
+        "aws_elasticsearch_domain",
+        "aws_lb_listener",
+        "aws_msk_cluster",
+        "aws_opensearch_domain",
+        "aws_redshift_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_003",
+      "name": "Public access must be blocked",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_dms_replication_instance",
+        "aws_eks_cluster",
+        "aws_elasticsearch_domain",
+        "aws_opensearch_domain",
+        "aws_rds_cluster",
+        "aws_rds_instance",
+        "aws_redshift_cluster",
+        "aws_s3_bucket_public_access_block"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_004",
+      "name": "S3 public bucket policy must be restricted",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_s3_bucket_public_access_block"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_005",
+      "name": "Logging must be enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_alb",
+        "aws_api_gateway_stage",
+        "aws_cloudtrail",
+        "aws_docdb_cluster",
+        "aws_eks_cluster",
+        "aws_lb",
+        "aws_msk_cluster",
+        "aws_neptune_cluster",
+        "aws_redshift_cluster",
+        "aws_s3_bucket"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_006",
+      "name": "Deletion protection must be enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_docdb_cluster",
+        "aws_dynamodb_table",
+        "aws_elasticache_cluster",
+        "aws_neptune_cluster",
+        "aws_rds_cluster",
+        "aws_rds_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_007",
+      "name": "Backup retention must be configured",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_dynamodb_table",
+        "aws_elasticache_replication_group",
+        "aws_rds_cluster",
+        "aws_rds_instance"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_008",
+      "name": "Key rotation must be enabled",
+      "principle": "key-management",
+      "resource_types": [
+        "aws_kms_key"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_009",
+      "name": "Versioning must be enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "aws_ecr_repository",
+        "aws_s3_bucket"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_010",
+      "name": "SSH must not be open to the internet",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_security_group"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_011",
+      "name": "IMDSv2 must be required",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_instance",
+        "aws_launch_configuration",
+        "aws_launch_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_012",
+      "name": "Default VPC must not be used",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_default_vpc"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_013",
+      "name": "Containers must not run as privileged",
+      "principle": "governance",
+      "resource_types": [
+        "aws_ecs_task_definition",
+        "kubernetes_deployment",
+        "kubernetes_pod"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_014",
+      "name": "CloudTrail must be multi-region",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudtrail"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_015",
+      "name": "IAM password policy must enforce complexity and expiry",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_account_password_policy"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_016",
+      "name": "IAM password expiry must be 90 days or less",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_account_password_policy"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_017",
+      "name": "IAM password reuse prevention must be at least 5",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_account_password_policy"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_018",
+      "name": "EC2 instances must not have public IPs assigned automatically",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_instance",
+        "aws_launch_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_019",
+      "name": "EC2 detailed monitoring must be enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_instance"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_020",
+      "name": "EC2 instances should be EBS-optimized",
+      "principle": "reliability",
+      "resource_types": [
+        "aws_instance"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_021",
+      "name": "Lambda functions must have X-Ray tracing enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_022",
+      "name": "Lambda functions should run inside a VPC",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_023",
+      "name": "CloudFront distributions must redirect HTTP to HTTPS",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_cloudfront_distribution"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_024",
+      "name": "CloudFront distributions must have WAF enabled",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_cloudfront_distribution"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_025",
+      "name": "RDS instances must be Multi-AZ for high availability",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_rds_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_026",
+      "name": "RDS instances must enable automatic minor version upgrades",
+      "principle": "patch-management",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_rds_instance"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_027",
+      "name": "ECR repositories must scan images on push",
+      "principle": "supply-chain",
+      "resource_types": [
+        "aws_ecr_repository"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_028",
+      "name": "EKS clusters must have secrets encryption configured",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_eks_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_029",
+      "name": "Resources must have tags configured",
+      "principle": "governance",
+      "resource_types": [
+        "aws_alb",
+        "aws_cloudfront_distribution",
+        "aws_db_instance",
+        "aws_dynamodb_table",
+        "aws_ecs_cluster",
+        "aws_eks_cluster",
+        "aws_elasticache_replication_group",
+        "aws_instance",
+        "aws_kms_key",
+        "aws_lambda_function",
+        "aws_lb",
+        "aws_rds_instance",
+        "aws_s3_bucket",
+        "aws_sns_topic",
+        "aws_sqs_queue"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_030",
+      "name": "Secrets Manager secrets must have a recovery window of at least 7 days",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_secretsmanager_secret"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_031",
+      "name": "VPC flow logs must capture all traffic",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_flow_log"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_032",
+      "name": "RDP must not be open to the internet",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_security_group"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_033",
+      "name": "ElastiCache encryption at rest must be enabled",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_elasticache_replication_group"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_034",
+      "name": "ElastiCache encryption in transit must be enabled",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_elasticache_replication_group"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_035",
+      "name": "Elasticsearch/OpenSearch node-to-node encryption must be enabled",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_elasticsearch_domain",
+        "aws_opensearch_domain"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_036",
+      "name": "Elasticsearch/OpenSearch domains must be deployed in a VPC",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_elasticsearch_domain",
+        "aws_opensearch_domain"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_037",
+      "name": "DynamoDB point-in-time recovery must be enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_dynamodb_table"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_038",
+      "name": "CloudWatch log groups must have a retention period configured",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_group"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_039",
+      "name": "CloudWatch log groups must be encrypted with a KMS key",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_cloudwatch_log_group"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_040",
+      "name": "EKS cluster API endpoint must have private access enabled",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_eks_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_041",
+      "name": "EKS cluster API endpoint must not be publicly accessible",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_eks_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_042",
+      "name": "Lambda functions must use a KMS key to encrypt environment variables",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_043",
+      "name": "ACM certificates must have certificate transparency logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_acm_certificate"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_044",
+      "name": "Redshift clusters must not be publicly accessible",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_redshift_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_045",
+      "name": "Kinesis Firehose delivery streams must have server-side encryption enabled",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_kinesis_firehose_delivery_stream"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_046",
+      "name": "MSK clusters must enforce TLS for in-transit encryption",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_msk_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_047",
+      "name": "EC2 instances must have termination protection enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "aws_instance"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_048",
+      "name": "RDS instances and clusters should use IAM database authentication",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_rds_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_049",
+      "name": "Cognito user pools must require MFA",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_cognito_user_pool"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_050",
+      "name": "Cognito user pool password must be at least 8 characters",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_cognito_user_pool"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_051",
+      "name": "Cognito user pools must enable advanced security",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_cognito_user_pool"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_052",
+      "name": "Subnets must not auto-assign public IP addresses",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_subnet"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_053",
+      "name": "VPC must have DNS support enabled",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_vpc"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_054",
+      "name": "VPC must have DNS hostnames enabled",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_vpc"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_055",
+      "name": "DAX clusters must have server-side encryption enabled",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_dax_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_056",
+      "name": "DAX cluster endpoints must require TLS",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_dax_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_057",
+      "name": "MQ brokers must not be publicly accessible",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_mq_broker"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_058",
+      "name": "MQ brokers must have audit logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_mq_broker"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_059",
+      "name": "Backup vaults must use a customer-managed KMS key",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_backup_vault"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_060",
+      "name": "GuardDuty detectors must be enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_guardduty_detector"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_061",
+      "name": "AWS Config recording must be enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_config_configuration_recorder_status"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_062",
+      "name": "SageMaker notebook instances must not allow direct internet access",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_sagemaker_notebook_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_063",
+      "name": "SageMaker notebook instances must use a KMS key for encryption",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_sagemaker_notebook_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_064",
+      "name": "CodeBuild projects must use a customer-managed KMS encryption key",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_codebuild_project"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_065",
+      "name": "CodeBuild projects must have CloudWatch logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_codebuild_project"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_066",
+      "name": "Athena workgroups must have encryption configured for query results",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_athena_workgroup"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_067",
+      "name": "Athena workgroups must enforce workgroup configuration",
+      "principle": "governance",
+      "resource_types": [
+        "aws_athena_workgroup"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_068",
+      "name": "Step Functions state machines must have logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_sfn_state_machine"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_069",
+      "name": "Step Functions state machines must have X-Ray tracing enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_sfn_state_machine"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_070",
+      "name": "WAFv2 web ACLs must have CloudWatch metrics enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_wafv2_web_acl"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_071",
+      "name": "WAFv2 web ACLs must have sampled requests enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_wafv2_web_acl"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_072",
+      "name": "FSx for Windows File Server must use a customer-managed KMS key",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_fsx_windows_file_system"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_073",
+      "name": "FSx for Lustre must use a customer-managed KMS key",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_fsx_lustre_file_system"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_074",
+      "name": "Glue jobs must have a security configuration set",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_glue_job"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_075",
+      "name": "CloudWatch alarms must have actions enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_metric_alarm"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_076",
+      "name": "CloudWatch alarms must have at least one alarm action configured",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_metric_alarm"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_077",
+      "name": "Auto Scaling groups must be deployed in VPC subnets",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_autoscaling_group"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_078",
+      "name": "ECR repositories must enforce image tag immutability",
+      "principle": "supply-chain",
+      "resource_types": [
+        "aws_ecr_repository"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_079",
+      "name": "CloudTrail must have log file validation enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudtrail"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_080",
+      "name": "CloudTrail must capture global service events",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudtrail"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_081",
+      "name": "Secrets Manager secrets must have automatic rotation enabled",
+      "principle": "key-management",
+      "resource_types": [
+        "aws_secretsmanager_secret"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_082",
+      "name": "EKS clusters must have control plane logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_eks_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_083",
+      "name": "RDS instances must not be publicly accessible",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_rds_instance"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_084",
+      "name": "RDS instances and clusters must have deletion protection enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_rds_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_085",
+      "name": "ECS task definition containers must use a read-only root filesystem",
+      "principle": "governance",
+      "resource_types": [
+        "aws_ecs_task_definition"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_086",
+      "name": "ALBs must drop invalid HTTP header fields",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_alb",
+        "aws_lb"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_087",
+      "name": "KMS keys must have a deletion window of at least 7 days",
+      "principle": "key-management",
+      "resource_types": [
+        "aws_kms_key"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_088",
+      "name": "API Gateway custom domain names must enforce TLS 1.2",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_api_gateway_domain_name"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_089",
+      "name": "Load balancers must have access logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_alb",
+        "aws_lb"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_090",
+      "name": "EC2 EBS encryption by default must be enabled at the account level",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_ebs_encryption_by_default"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_091",
+      "name": "SSM parameters storing secrets must use the SecureString type",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_ssm_parameter"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_092",
+      "name": "Security groups must not allow unrestricted egress to all ports",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_security_group"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_093",
+      "name": "EC2 launch templates must set IMDS hop limit to 1",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_launch_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_094",
+      "name": "S3 buckets used for CloudTrail logs must have access logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudtrail"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_095",
+      "name": "CodeBuild projects should not run in privileged mode",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_codebuild_project"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_096",
+      "name": "CodeBuild build timeout should not exceed 30 minutes",
+      "principle": "maintainability",
+      "resource_types": [
+        "aws_codebuild_project"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_097",
+      "name": "CodeBuild projects should not use the largest compute type without justification",
+      "principle": "maintainability",
+      "resource_types": [
+        "aws_codebuild_project"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_098",
+      "name": "CodePipeline artifact store should use a customer-managed KMS key",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_codepipeline"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_099",
+      "name": "RDS instances must have automated backups enabled with sufficient retention",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_rds_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_100",
+      "name": "RDS instances should be deployed across multiple availability zones",
+      "principle": "reliability",
+      "resource_types": [
+        "aws_db_instance"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_101",
+      "name": "RDS instances should allow automatic minor version upgrades",
+      "principle": "patch-management",
+      "resource_types": [
+        "aws_db_instance"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_102",
+      "name": "Lambda functions should configure a dead-letter queue",
+      "principle": "reliability",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_103",
+      "name": "Lambda functions should have X-Ray active tracing enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_104",
+      "name": "ElastiCache replication groups must enable at-rest encryption",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_elasticache_replication_group"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_105",
+      "name": "ElastiCache replication groups must enable in-transit encryption",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_elasticache_replication_group"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_106",
+      "name": "ElastiCache replication groups should require an auth token",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_elasticache_replication_group"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_107",
+      "name": "SNS topics must use a KMS key for server-side encryption",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_sns_topic"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_108",
+      "name": "SQS queues must have server-side encryption enabled",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_sqs_queue"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_109",
+      "name": "CloudWatch log groups should have a retention period set",
+      "principle": "cost",
+      "resource_types": [
+        "aws_cloudwatch_log_group"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_110",
+      "name": "EBS volumes should use gp3 instead of gp2",
+      "principle": "cost",
+      "resource_types": [
+        "aws_ebs_volume"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_111",
+      "name": "RDS instances should enable storage autoscaling",
+      "principle": "cost",
+      "resource_types": [
+        "aws_db_instance"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_112",
+      "name": "CloudFront distributions should not use PriceClass_All unless global reach is required",
+      "principle": "cost",
+      "resource_types": [
+        "aws_cloudfront_distribution"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_113",
+      "name": "Multiple NAT gateways should be used only when cross-AZ resilience is required",
+      "principle": "cost",
+      "resource_types": [
+        "aws_nat_gateway"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_114",
+      "name": "S3 buckets should have lifecycle rules to control storage costs",
+      "principle": "cost",
+      "resource_types": [
+        "aws_s3_bucket_lifecycle_configuration"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_115",
+      "name": "Lambda functions should not use the maximum memory allocation without justification",
+      "principle": "cost",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_116",
+      "name": "Elastic IPs should be associated with an instance or network interface",
+      "principle": "cost",
+      "resource_types": [
+        "aws_eip"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_117",
+      "name": "CloudWatch metric filter must detect unauthorized API calls (CIS 3.1)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_118",
+      "name": "CloudWatch metric filter must detect console sign-in without MFA (CIS 3.2)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_119",
+      "name": "CloudWatch metric filter must detect root account usage (CIS 3.3)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_120",
+      "name": "CloudWatch metric filter must detect IAM policy changes (CIS 3.4)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_121",
+      "name": "CloudWatch metric filter must detect CloudTrail configuration changes (CIS 3.5)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_122",
+      "name": "CloudWatch metric filter must detect AWS Management Console authentication failures (CIS 3.6)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_123",
+      "name": "CloudWatch metric filter must detect disabling or deletion of KMS CMKs (CIS 3.7)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_124",
+      "name": "CloudWatch metric filter must detect S3 bucket policy changes (CIS 3.8)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_125",
+      "name": "CloudWatch metric filter must detect AWS Config configuration changes (CIS 3.9)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_126",
+      "name": "CloudWatch metric filter must detect security group changes (CIS 3.10)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_127",
+      "name": "CloudWatch metric filter must detect Network ACL changes (CIS 3.11)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_128",
+      "name": "CloudWatch metric filter must detect network gateway changes (CIS 3.12)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_129",
+      "name": "CloudWatch metric filter must detect route table changes (CIS 3.13)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_130",
+      "name": "CloudWatch metric filter must detect VPC changes (CIS 3.14)",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudwatch_log_metric_filter"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_131",
+      "name": "S3 buckets must have an aws_s3_bucket_public_access_block resource",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_s3_bucket"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_132",
+      "name": "S3 buckets must have an aws_s3_bucket_server_side_encryption_configuration resource",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_s3_bucket"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_133",
+      "name": "Every VPC must have an aws_flow_log resource",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_vpc"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_134",
+      "name": "WAFv2 web ACLs must be associated with a resource via aws_wafv2_web_acl_association",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_wafv2_web_acl"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_135",
+      "name": "aws_s3_bucket_object is deprecated \u2014 use aws_s3_object",
+      "principle": "repeatability",
+      "resource_types": [
+        "aws_s3_bucket_object"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_136",
+      "name": "aws_launch_configuration is deprecated \u2014 use aws_launch_template",
+      "principle": "repeatability",
+      "resource_types": [
+        "aws_launch_configuration"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_137",
+      "name": "aws_db_security_group is deprecated \u2014 use VPC security groups",
+      "principle": "repeatability",
+      "resource_types": [
+        "aws_db_security_group"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_138",
+      "name": "aws_redshift_security_group is deprecated \u2014 use VPC security groups",
+      "principle": "repeatability",
+      "resource_types": [
+        "aws_redshift_security_group"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_139",
+      "name": "aws_elasticache_security_group is deprecated \u2014 use VPC security groups",
+      "principle": "repeatability",
+      "resource_types": [
+        "aws_elasticache_security_group"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_140",
+      "name": "aws_iam_policy_attachment exclusively manages attachments \u2014 use targeted attachment resources",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_policy_attachment"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_141",
+      "name": "aws_eip vpc argument is deprecated \u2014 argument must be absent",
+      "principle": "repeatability",
+      "resource_types": [
+        "aws_eip"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_142",
+      "name": "IAM policy document Allow statements must not use wildcard actions",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "data.aws_iam_policy_document"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_143",
+      "name": "IAM policy document statements must not use a wildcard principal",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "data.aws_iam_policy_document"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_144",
+      "name": "S3 buckets must have an aws_s3_bucket_logging resource",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_s3_bucket"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_145",
+      "name": "S3 buckets must have an aws_s3_bucket_versioning resource",
+      "principle": "data-protection",
+      "resource_types": [
+        "aws_s3_bucket"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_146",
+      "name": "ECR repositories must have a lifecycle policy",
+      "principle": "cost",
+      "resource_types": [
+        "aws_ecr_repository"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_147",
+      "name": "WAFv2 web ACLs must have logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_wafv2_web_acl"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_148",
+      "name": "Lambda function URLs must require authentication",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_lambda_function_url"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_149",
+      "name": "API Gateway (v1) stages must have access logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_api_gateway_stage"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_150",
+      "name": "API Gateway v2 stages must have access logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_apigatewayv2_stage"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_151",
+      "name": "CloudFront distributions must have access logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudfront_distribution"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_152",
+      "name": "IAM role maximum session duration must not exceed 12 hours",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_role"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_153",
+      "name": "S3 buckets must have an aws_s3_bucket_lifecycle_configuration resource",
+      "principle": "cost",
+      "resource_types": [
+        "aws_s3_bucket"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_AWS_154",
+      "name": "ALB HTTP listeners must redirect to HTTPS",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_alb_listener",
+        "aws_lb_listener"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_155",
+      "name": "RDS instances must have enhanced monitoring enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_db_instance"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_156",
+      "name": "RDS instances must have Performance Insights enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_db_instance"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_157",
+      "name": "ECS task definitions must not use host networking",
+      "principle": "governance",
+      "resource_types": [
+        "aws_ecs_task_definition"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_158",
+      "name": "ElastiCache replication groups must enable Multi-AZ",
+      "principle": "reliability",
+      "resource_types": [
+        "aws_elasticache_replication_group"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_159",
+      "name": "Kinesis streams must use KMS server-side encryption",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_kinesis_stream"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_160",
+      "name": "AWS Config recorder must capture all supported resource types",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_config_configuration_recorder"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_161",
+      "name": "CloudTrail must have event selectors configured for data event logging",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudtrail"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_162",
+      "name": "RDS, Aurora, DocumentDB, and Neptune clusters must encrypt storage at rest",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_docdb_cluster",
+        "aws_neptune_cluster",
+        "aws_rds_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_163",
+      "name": "RDS instances must export logs to CloudWatch",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_db_instance"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_164",
+      "name": "Application Load Balancers must have deletion protection enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "aws_alb",
+        "aws_lb"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_165",
+      "name": "ElastiCache replication groups must retain snapshots for at least one day",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_elasticache_replication_group"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_166",
+      "name": "Neptune clusters must have deletion protection enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "aws_neptune_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_167",
+      "name": "Neptune clusters must retain automated backups for at least 7 days",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_neptune_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_168",
+      "name": "Neptune clusters must enable IAM database authentication",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_neptune_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_169",
+      "name": "MSK clusters must have broker logging configured",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_msk_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_170",
+      "name": "MSK clusters must use a customer-managed KMS key for encryption at rest",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_msk_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_171",
+      "name": "DocumentDB clusters must export logs to CloudWatch",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_docdb_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_172",
+      "name": "Redshift clusters must have audit logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_redshift_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_173",
+      "name": "Redshift clusters must allow automatic version upgrades",
+      "principle": "patch-management",
+      "resource_types": [
+        "aws_redshift_cluster"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_174",
+      "name": "API Gateway stages must enable X-Ray tracing",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_api_gateway_stage"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AWS_175",
+      "name": "EBS volumes must be encrypted",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_ebs_volume"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_176",
+      "name": "QLDB ledgers must have deletion protection enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "aws_qldb_ledger"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_177",
+      "name": "Secrets Manager secrets must use a customer-managed KMS key",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_secretsmanager_secret"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_178",
+      "name": "EMR clusters must attach a security configuration",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_emr_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_179",
+      "name": "IAM root user must not have access keys",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_access_key"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_180",
+      "name": "IAM users must not be created directly; use roles or SSO instead",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_user"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_181",
+      "name": "IAM principals must not be granted the AWS AdministratorAccess policy",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_group_policy_attachment",
+        "aws_iam_role",
+        "aws_iam_role_policy_attachment",
+        "aws_iam_user_policy_attachment"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_182",
+      "name": "Security groups must not allow HTTP (port 80) from the internet",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_security_group"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_183",
+      "name": "Security groups must not allow all ports ingress from the internet",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_security_group"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_184",
+      "name": "Lambda function permissions must not allow public invocation",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_lambda_permission"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_185",
+      "name": "ECS services must not assign public IP addresses automatically",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_ecs_service"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_186",
+      "name": "ECS Fargate services must use the latest Fargate platform version",
+      "principle": "reliability",
+      "resource_types": [
+        "aws_ecs_service"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_187",
+      "name": "EMR must be configured to block public access at the account level",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_emr_block_public_access_configuration"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_188",
+      "name": "SSM documents must not be publicly shared",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_ssm_document"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_189",
+      "name": "ECS clusters must not disable exec command logging",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_ecs_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_190",
+      "name": "Lambda functions must have a concurrent execution limit configured",
+      "principle": "reliability",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_191",
+      "name": "Lambda functions must not use deprecated runtimes",
+      "principle": "reliability",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_192",
+      "name": "Lambda functions must have code signing configured",
+      "principle": "supply-chain",
+      "resource_types": [
+        "aws_lambda_function"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_193",
+      "name": "API Gateway methods must require authorisation",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_api_gateway_method"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_194",
+      "name": "CloudTrail trails must send logs to CloudWatch Logs",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_cloudtrail"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_195",
+      "name": "SageMaker notebook instances must disable root access",
+      "principle": "governance",
+      "resource_types": [
+        "aws_sagemaker_notebook_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_196",
+      "name": "ECS task definitions must not share the host PID namespace",
+      "principle": "governance",
+      "resource_types": [
+        "aws_ecs_task_definition"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_197",
+      "name": "ECS task definitions must not share the host IPC namespace",
+      "principle": "governance",
+      "resource_types": [
+        "aws_ecs_task_definition"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_198",
+      "name": "Route53 hosted zones should enable DNSSEC signing",
+      "principle": "data-protection",
+      "resource_types": [
+        "aws_route53_zone"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_199",
+      "name": "Glue crawlers must have a security configuration set",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_glue_crawler"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_200",
+      "name": "Glue Data Catalog connection passwords must be encrypted",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_glue_data_catalog_encryption_settings"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_201",
+      "name": "DynamoDB tables must have point-in-time recovery enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_dynamodb_table"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_202",
+      "name": "Backup vaults should have a vault lock configuration",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "aws_backup_vault"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_203",
+      "name": "EFS access points must specify a POSIX user identity",
+      "principle": "governance",
+      "resource_types": [
+        "aws_efs_access_point"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_204",
+      "name": "Transfer Server must not use unencrypted FTP protocol",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_transfer_server"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AWS_205",
+      "name": "AppSync GraphQL APIs must have CloudWatch logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "aws_appsync_graphql_api"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_206",
+      "name": "MSK clusters must encrypt broker-to-broker communication",
+      "principle": "encryption",
+      "resource_types": [
+        "aws_msk_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AWS_207",
+      "name": "Security groups must not allow unrestricted SSH ingress via separate rule resource",
+      "principle": "network-security",
+      "resource_types": [
+        "aws_security_group"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_208",
+      "name": "IAM roles must not have AdministratorAccess attached",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "aws_iam_role"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AWS_209",
+      "name": "Auto Scaling Groups must not use $Latest launch template version",
+      "principle": "supply-chain",
+      "resource_types": [
+        "aws_autoscaling_group"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_001",
+      "name": "Azure Storage accounts must enforce HTTPS-only traffic",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_storage_account"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_002",
+      "name": "Azure Storage accounts must enforce a minimum TLS version of 1.2",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_storage_account"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_003",
+      "name": "Azure Storage accounts must not allow public blob access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_storage_account"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_004",
+      "name": "Azure Storage accounts should enable infrastructure encryption",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_storage_account"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_005",
+      "name": "Azure Key Vault must have soft delete enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "azurerm_key_vault"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_006",
+      "name": "Azure Key Vault must have purge protection enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "azurerm_key_vault"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_007",
+      "name": "Azure Key Vault should restrict network access with firewall rules",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_key_vault"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_008",
+      "name": "Azure Key Vault should use RBAC for access control rather than access policies",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "azurerm_key_vault"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_009",
+      "name": "Network Security Groups must not allow unrestricted inbound SSH from the internet",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_network_security_rule"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AZ_010",
+      "name": "Network Security Groups must not allow unrestricted inbound RDP from the internet",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_network_security_rule"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_AZ_011",
+      "name": "Azure App Service / Web Apps must enforce HTTPS-only",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_app_service",
+        "azurerm_linux_function_app",
+        "azurerm_linux_web_app",
+        "azurerm_windows_function_app",
+        "azurerm_windows_web_app"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_012",
+      "name": "Azure App Service must use a managed identity",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "azurerm_app_service",
+        "azurerm_linux_web_app",
+        "azurerm_windows_web_app"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_013",
+      "name": "AKS clusters must have Kubernetes RBAC enabled",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "azurerm_kubernetes_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_014",
+      "name": "AKS clusters must configure a Kubernetes network policy",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_kubernetes_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_015",
+      "name": "Azure SQL / MSSQL servers must have an extended auditing policy",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "azurerm_mssql_server",
+        "azurerm_sql_server"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_016",
+      "name": "Azure Container Registry admin user must be disabled",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "azurerm_container_registry"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_017",
+      "name": "Azure Redis Cache must disable the non-SSL port",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_redis_cache"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_018",
+      "name": "Azure App Service must enforce TLS 1.2 as the minimum version",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_app_service",
+        "azurerm_linux_function_app",
+        "azurerm_linux_web_app",
+        "azurerm_windows_function_app",
+        "azurerm_windows_web_app"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_019",
+      "name": "App Services must have remote debugging disabled",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_linux_function_app",
+        "azurerm_linux_web_app",
+        "azurerm_windows_function_app",
+        "azurerm_windows_web_app"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_020",
+      "name": "App Services must restrict FTP deployments to FTPS or disable them",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_linux_function_app",
+        "azurerm_linux_web_app",
+        "azurerm_windows_function_app",
+        "azurerm_windows_web_app"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_021",
+      "name": "PostgreSQL servers must enforce SSL connections",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_postgresql_flexible_server",
+        "azurerm_postgresql_server"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_022",
+      "name": "MySQL servers must enforce SSL connections",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_mysql_server"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_023",
+      "name": "Cosmos DB accounts must use a customer-managed key for encryption",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_cosmosdb_account"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_024",
+      "name": "Key Vault keys must have an expiration date",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "azurerm_key_vault_key"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_025",
+      "name": "AKS clusters must restrict API server access to authorized IP ranges",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_kubernetes_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_026",
+      "name": "Application Gateway WAF must be in Prevention mode",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_application_gateway"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_027",
+      "name": "Azure Load Balancers must use the Standard SKU",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_lb"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_028",
+      "name": "MSSQL servers must have a vulnerability assessment configured",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "azurerm_mssql_server"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_029",
+      "name": "PostgreSQL servers must have threat detection enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "azurerm_postgresql_server"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_030",
+      "name": "AKS clusters must have Microsoft Defender enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "azurerm_kubernetes_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_031",
+      "name": "AKS clusters must disable the local administrator account",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "azurerm_kubernetes_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_032",
+      "name": "AKS cluster nodes must not have public IP addresses",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_kubernetes_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_033",
+      "name": "Azure Key Vault must disable public network access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_key_vault"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_034",
+      "name": "PostgreSQL servers must disable public network access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_postgresql_flexible_server",
+        "azurerm_postgresql_server"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_035",
+      "name": "MySQL servers must disable public network access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_mysql_flexible_server",
+        "azurerm_mysql_server"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_036",
+      "name": "Azure Cosmos DB accounts must disable public network access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_cosmosdb_account"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_037",
+      "name": "Storage accounts must deny access by default in network rules",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_storage_account"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_038",
+      "name": "App Services must disable public network access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_linux_web_app",
+        "azurerm_windows_web_app"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_039",
+      "name": "Linux virtual machines must disable password authentication",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "azurerm_linux_virtual_machine"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_040",
+      "name": "Windows virtual machines must have automatic updates enabled",
+      "principle": "patch-management",
+      "resource_types": [
+        "azurerm_windows_virtual_machine"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_041",
+      "name": "MSSQL servers must have a security alert policy (threat detection) configured",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "azurerm_mssql_server"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_042",
+      "name": "MSSQL firewall rules must not allow unrestricted internet access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_mssql_firewall_rule",
+        "azurerm_sql_firewall_rule"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_043",
+      "name": "Storage account blob soft delete must be enabled with a retention of at least 7 days",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "azurerm_storage_account"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_044",
+      "name": "Storage account blob versioning must be enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "azurerm_storage_account"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_AZ_045",
+      "name": "Azure managed disks should use a customer-managed encryption key",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_managed_disk"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_046",
+      "name": "Azure Container Registry must deny public network access by default",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_container_registry"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_047",
+      "name": "Azure SQL Server must enforce a minimum TLS version of 1.2",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_mssql_server"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_048",
+      "name": "Azure Data Factory must disable public network access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_data_factory"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_049",
+      "name": "App Service CORS configuration must not allow all origins",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_app_service",
+        "azurerm_linux_web_app",
+        "azurerm_windows_web_app"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_050",
+      "name": "Azure API Management must disable public network access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_api_management"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_051",
+      "name": "Azure Cognitive Services accounts must disable public network access",
+      "principle": "network-security",
+      "resource_types": [
+        "azurerm_cognitive_account"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_AZ_052",
+      "name": "EventHub namespaces must enforce a minimum TLS version of 1.2",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_eventhub_namespace"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_AZ_053",
+      "name": "Service Bus namespaces must enforce a minimum TLS version of 1.2",
+      "principle": "encryption",
+      "resource_types": [
+        "azurerm_servicebus_namespace"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_CI_001",
+      "name": "GitHub Actions AWS authentication should use OIDC role assumption not static keys",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "gha_aws_auth"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_CI_003",
+      "name": "GitHub Actions Azure authentication should use OIDC not a service principal JSON secret",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "gha_azure_auth"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_CI_004",
+      "name": "GitHub Actions steps should be pinned to a commit SHA",
+      "principle": "supply-chain",
+      "resource_types": [
+        "gha_step"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_CI_005",
+      "name": "GitHub Actions workflow must not use permissions write-all",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "gha_workflow"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_CI_006",
+      "name": "GitHub Actions jobs should declare an explicit timeout",
+      "principle": "reliability",
+      "resource_types": [
+        "gha_job"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_CI_007",
+      "name": "GitHub Actions workflow must declare a top-level permissions block",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "gha_workflow"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_CI_008",
+      "name": "GitHub Actions workflow must not use dangerous trigger combinations",
+      "principle": "supply-chain",
+      "resource_types": [
+        "gha_workflow"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_CI_009",
+      "name": "GitHub Actions steps must specify a version ref",
+      "principle": "supply-chain",
+      "resource_types": [
+        "gha_step"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_CI_010",
+      "name": "Cloud auth jobs should declare explicit per-job permissions",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "gha_job"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_CI_011",
+      "name": "Terraform workflows should set a concurrency group",
+      "principle": "reliability",
+      "resource_types": [
+        "gha_workflow"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_CI_012",
+      "name": "Warn on self-hosted runners",
+      "principle": "governance",
+      "resource_types": [
+        "gha_job"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_CI_013",
+      "name": "Steps should not expose secrets through env variables",
+      "principle": "data-protection",
+      "resource_types": [
+        "gha_step"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_001",
+      "name": "GCS buckets must use customer-managed encryption keys",
+      "principle": "encryption",
+      "resource_types": [
+        "google_storage_bucket"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_002",
+      "name": "GCS buckets must use uniform bucket-level access",
+      "principle": "network-security",
+      "resource_types": [
+        "google_storage_bucket"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_003",
+      "name": "GCS buckets must have access logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "google_storage_bucket"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_004",
+      "name": "GCS buckets must have versioning enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "google_storage_bucket"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_005",
+      "name": "GCE instances must not have external IP addresses",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_006",
+      "name": "GCE instances must enable Shielded VM features",
+      "principle": "governance",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_007",
+      "name": "GCE instances must not have serial port access enabled",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_008",
+      "name": "GCE instances must have OS Login enabled",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_009",
+      "name": "GCP firewall rules must not allow unrestricted ingress from the internet",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_firewall"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_010",
+      "name": "Cloud SQL instances must require SSL connections",
+      "principle": "encryption",
+      "resource_types": [
+        "google_sql_database_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_011",
+      "name": "Cloud SQL instances must have automated backups enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "google_sql_database_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_012",
+      "name": "Cloud SQL instances must not have public IP addresses",
+      "principle": "network-security",
+      "resource_types": [
+        "google_sql_database_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_013",
+      "name": "GKE clusters must restrict master endpoint access",
+      "principle": "network-security",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_014",
+      "name": "GKE clusters must enable Workload Identity",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_015",
+      "name": "GKE clusters must enable Shielded Nodes",
+      "principle": "governance",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_016",
+      "name": "GKE clusters must have Cloud Logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_017",
+      "name": "Cloud KMS keys must have automatic rotation configured",
+      "principle": "key-management",
+      "resource_types": [
+        "google_kms_crypto_key"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_018",
+      "name": "IAM bindings must not grant access to allUsers or allAuthenticatedUsers",
+      "principle": "network-security",
+      "resource_types": [
+        "google_project_iam_binding",
+        "google_project_iam_member",
+        "google_storage_bucket_iam_binding",
+        "google_storage_bucket_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_019",
+      "name": "GCP resources must have labels configured",
+      "principle": "governance",
+      "resource_types": [
+        "google_bigquery_dataset",
+        "google_cloudfunctions_function",
+        "google_compute_instance",
+        "google_container_cluster",
+        "google_kms_crypto_key",
+        "google_pubsub_topic",
+        "google_sql_database_instance",
+        "google_storage_bucket"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_GCP_020",
+      "name": "BigQuery datasets must not allow public access",
+      "principle": "network-security",
+      "resource_types": [
+        "google_bigquery_dataset_access",
+        "google_bigquery_dataset_iam_binding",
+        "google_bigquery_dataset_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_021",
+      "name": "Cloud Functions must restrict ingress to internal traffic only",
+      "principle": "network-security",
+      "resource_types": [
+        "google_cloudfunctions2_function",
+        "google_cloudfunctions_function"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_022",
+      "name": "Pub/Sub topics must be encrypted with a customer-managed key",
+      "principle": "encryption",
+      "resource_types": [
+        "google_pubsub_topic"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_023",
+      "name": "Cloud Run services must not allow unauthenticated invocations",
+      "principle": "network-security",
+      "resource_types": [
+        "google_cloud_run_service_iam_member",
+        "google_cloud_run_v2_service_iam_member"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_024",
+      "name": "Artifact Registry repositories must not grant public access",
+      "principle": "network-security",
+      "resource_types": [
+        "google_artifact_registry_repository_iam_member"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_025",
+      "name": "GCP subnetworks must enable Private Google Access",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_subnetwork"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_026",
+      "name": "GCP subnetworks must enable VPC flow logs",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "google_compute_subnetwork"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_027",
+      "name": "Cloud DNS managed zones must have DNSSEC enabled",
+      "principle": "network-security",
+      "resource_types": [
+        "google_dns_managed_zone"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_028",
+      "name": "GCP VPC networks must not auto-create subnetworks",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_network"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_029",
+      "name": "GCP SSL policies must enforce a minimum of TLS 1.2",
+      "principle": "encryption",
+      "resource_types": [
+        "google_compute_ssl_policy"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_030",
+      "name": "GKE node pools must have automatic upgrades enabled",
+      "principle": "supply-chain",
+      "resource_types": [
+        "google_container_node_pool"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_031",
+      "name": "GKE node pools must have automatic repair enabled",
+      "principle": "governance",
+      "resource_types": [
+        "google_container_node_pool"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_032",
+      "name": "GCE persistent disks must use a customer-managed encryption key",
+      "principle": "encryption",
+      "resource_types": [
+        "google_compute_disk"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_033",
+      "name": "Secret Manager secrets must have replication explicitly configured",
+      "principle": "encryption",
+      "resource_types": [
+        "google_secret_manager_secret"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_034",
+      "name": "GKE clusters must have network policy enabled",
+      "principle": "network-security",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_035",
+      "name": "GKE clusters must not issue client certificates",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_036",
+      "name": "GKE clusters must have legacy ABAC disabled",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_037",
+      "name": "Cloud SQL instances must enable automated backups",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "google_sql_database_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_038",
+      "name": "GCE instances must not use the default service account",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_from_template",
+        "google_container_node_pool"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_039",
+      "name": "GCS buckets must not grant public read access via IAM",
+      "principle": "network-security",
+      "resource_types": [
+        "google_storage_bucket_iam_binding",
+        "google_storage_bucket_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_040",
+      "name": "GCE subnetworks must enable VPC flow logs",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "google_compute_subnetwork"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_041",
+      "name": "Service accounts must not have project-level admin roles",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_project_iam_binding",
+        "google_project_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_042",
+      "name": "Google Cloud authentication should use Workload Identity Federation",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "gha_gcp_auth"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_043",
+      "name": "Google provider must not use inline service account key credentials",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "provider"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_044",
+      "name": "GCP IAM bindings must not use primitive roles",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_folder_iam_member",
+        "google_organization_iam_member",
+        "google_project_iam_binding",
+        "google_project_iam_member"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_045",
+      "name": "GKE clusters must enable Binary Authorization",
+      "principle": "supply-chain",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_046",
+      "name": "Cloud SQL instances must have deletion protection enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "google_sql_database_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_047",
+      "name": "GCP firewall rules must have logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "google_compute_firewall"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_048",
+      "name": "Cloud SQL instances must retain at least 7 automated backups",
+      "principle": "data-protection",
+      "resource_types": [
+        "google_sql_database_instance"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_049",
+      "name": "Cloud SQL instances must have point-in-time recovery enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "google_sql_database_instance"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_050",
+      "name": "GCP backend services must have a Cloud Armor security policy attached",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_backend_service"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_051",
+      "name": "Firestore databases must have deletion protection enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "google_firestore_database"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_052",
+      "name": "GKE clusters must have a maintenance policy configured",
+      "principle": "reliability",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_GCP_053",
+      "name": "GKE cluster control plane must not be accessible from 0.0.0.0/0",
+      "principle": "network-security",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_054",
+      "name": "GKE clusters must have master authorized networks configured",
+      "principle": "network-security",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_055",
+      "name": "Service accounts must not be granted admin or editor roles at the project level",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_project_iam_member"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_056",
+      "name": "Cloud SQL instances must not have a public IP address",
+      "principle": "network-security",
+      "resource_types": [
+        "google_sql_database_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_057",
+      "name": "GKE clusters must use a release channel for automatic upgrades",
+      "principle": "reliability",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_058",
+      "name": "GKE node pool automatic upgrades must be enabled",
+      "principle": "reliability",
+      "resource_types": [
+        "google_container_node_pool"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_059",
+      "name": "Google provider should use service account impersonation for least-privilege scoping",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "provider"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_GCP_060",
+      "name": "Artifact Registry repositories should use customer-managed encryption keys",
+      "principle": "encryption",
+      "resource_types": [
+        "google_artifact_registry_repository"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_061",
+      "name": "GKE clusters must encrypt Kubernetes secrets at rest",
+      "principle": "encryption",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_062",
+      "name": "GKE cluster nodes must use private IP addresses",
+      "principle": "network-security",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_063",
+      "name": "GKE clusters should enable confidential nodes",
+      "principle": "governance",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_064",
+      "name": "GCE instances must block project-wide SSH keys",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_template"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_065",
+      "name": "GKE cluster control plane should use a private endpoint",
+      "principle": "network-security",
+      "resource_types": [
+        "google_container_cluster"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_066",
+      "name": "Cloud NAT gateways must have logging enabled",
+      "principle": "logging-and-monitoring",
+      "resource_types": [
+        "google_compute_router_nat"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_GCP_067",
+      "name": "BigQuery tables and datasets should use customer-managed encryption keys",
+      "principle": "encryption",
+      "resource_types": [
+        "google_bigquery_dataset",
+        "google_bigquery_table"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_068",
+      "name": "Cloud Spanner databases should use customer-managed encryption keys",
+      "principle": "encryption",
+      "resource_types": [
+        "google_spanner_database"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_069",
+      "name": "KMS crypto key IAM members must not grant access to allUsers or allAuthenticatedUsers",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_kms_crypto_key_iam_binding",
+        "google_kms_crypto_key_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_070",
+      "name": "KMS crypto key IAM members must not grant the cloudkms.admin role",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_kms_crypto_key_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_071",
+      "name": "Artifact Registry remote repositories must not proxy external registries",
+      "principle": "supply-chain",
+      "resource_types": [
+        "google_artifact_registry_repository"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_072",
+      "name": "GCP provider should configure default_labels",
+      "principle": "maintainability",
+      "resource_types": [
+        "provider"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_GCP_073",
+      "name": "KMS key ring IAM must not grant access to allUsers or allAuthenticatedUsers",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_kms_key_ring_iam_binding",
+        "google_kms_key_ring_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_074",
+      "name": "GCP firewall target_tags must match at least one compute instance tag",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_firewall"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_075",
+      "name": "GCE instances must not enable IP forwarding",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_076",
+      "name": "GCE instances must not use the cloud-platform OAuth scope",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_from_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_077",
+      "name": "IAP tunnel instance IAM must not grant public access",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_iap_tunnel_instance_iam_binding",
+        "google_iap_tunnel_instance_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_078",
+      "name": "Service account IAM must not grant public access",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_service_account_iam_binding",
+        "google_service_account_iam_member"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_079",
+      "name": "GCP projects must not auto-create the default network",
+      "principle": "network-security",
+      "resource_types": [
+        "google_project"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_080",
+      "name": "Workload identity pool provider must have an attribute condition",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_iam_workload_identity_pool_provider"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_081",
+      "name": "GCP firewall target_service_accounts must match at least one compute instance service account",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_firewall"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_082",
+      "name": "BigQuery tables should have deletion protection enabled",
+      "principle": "data-protection",
+      "resource_types": [
+        "google_bigquery_table"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_083",
+      "name": "Firestore database must have GCP-level deletion protection enabled",
+      "principle": "backup-and-recovery",
+      "resource_types": [
+        "google_firestore_database"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_084",
+      "name": "Cloud Run services must not use the default Compute Engine service account",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_cloud_run_service",
+        "google_cloud_run_v2_service"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_085",
+      "name": "Cloud Functions IAM members must not grant access to allUsers or allAuthenticatedUsers",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "google_cloudfunctions2_function_iam_member",
+        "google_cloudfunctions_function_iam_member"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_086",
+      "name": "Cloud Functions should use a customer-managed encryption key",
+      "principle": "encryption",
+      "resource_types": [
+        "google_cloudfunctions2_function",
+        "google_cloudfunctions_function"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_087",
+      "name": "GCS buckets must enforce public access prevention",
+      "principle": "network-security",
+      "resource_types": [
+        "google_storage_bucket"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_088",
+      "name": "GCS bucket ACLs must not grant public access",
+      "principle": "network-security",
+      "resource_types": [
+        "google_storage_bucket_acl",
+        "google_storage_default_object_acl"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_GCP_089",
+      "name": "GCE instances must enable Secure Boot",
+      "principle": "governance",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_090",
+      "name": "google_compute_address must declare address_type explicitly",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_address"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GCP_091",
+      "name": "GCE instances must not use the default VPC network",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_instance",
+        "google_compute_instance_template"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_092",
+      "name": "GCE instance boot disk must use a customer-managed encryption key",
+      "principle": "encryption",
+      "resource_types": [
+        "google_compute_instance"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GCP_093",
+      "name": "GCP VPC networks must have at least one explicit firewall rule",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_network"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GL_001",
+      "name": "GitLab CI images should be pinned to a digest",
+      "principle": "supply-chain",
+      "resource_types": [
+        "gitlab_image"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_GL_002",
+      "name": "GitLab CI jobs should declare a timeout",
+      "principle": "reliability",
+      "resource_types": [
+        "gitlab_job"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_GL_003",
+      "name": "GitLab CI jobs should not silently allow failure",
+      "principle": "reliability",
+      "resource_types": [
+        "gitlab_job"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_PROPOSED_001",
+      "name": "GCP VPC networks must delete the default internet egress route on creation",
+      "principle": "network-security",
+      "resource_types": [
+        "google_compute_network"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_001",
+      "name": "Terraform version must be pinned",
+      "principle": "repeatability",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_002",
+      "name": "Provider version must be pinned",
+      "principle": "repeatability",
+      "resource_types": [
+        "provider_requirement"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_003",
+      "name": "Module version must be pinned",
+      "principle": "supply-chain",
+      "resource_types": [
+        "module"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_004",
+      "name": "Remote backend must be configured",
+      "principle": "repeatability",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_005",
+      "name": "Terraform lock file must be present",
+      "principle": "repeatability",
+      "resource_types": [
+        "workspace"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_006",
+      "name": "Variables must have a description",
+      "principle": "maintainability",
+      "resource_types": [
+        "variable"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_TF_007",
+      "name": "Outputs must have a description",
+      "principle": "maintainability",
+      "resource_types": [
+        "output"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_TF_008",
+      "name": "Provider source must be explicitly declared in required_providers",
+      "principle": "supply-chain",
+      "resource_types": [
+        "provider_requirement"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_009",
+      "name": "Provider blocks must not contain hardcoded credentials",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "provider"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_TF_010",
+      "name": "Remote backend must have encryption enabled",
+      "principle": "encryption",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_011",
+      "name": "S3 backend must use DynamoDB for state locking",
+      "principle": "repeatability",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_012",
+      "name": "Variables must declare a type",
+      "principle": "maintainability",
+      "resource_types": [
+        "variable"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_013",
+      "name": "Provider assume_role must set an external_id",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "provider"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HLD_TF_014",
+      "name": "S3 backend must specify a state file key",
+      "principle": "repeatability",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_015",
+      "name": "AWS provider should configure default_tags",
+      "principle": "maintainability",
+      "resource_types": [
+        "provider"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_TF_016",
+      "name": "Resource names must use snake_case",
+      "principle": "maintainability",
+      "resource_types": [
+        "*"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_017",
+      "name": "Variable blocks should be defined in variables.tf",
+      "principle": "maintainability",
+      "resource_types": [
+        "variable"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_018",
+      "name": "Output blocks should be defined in outputs.tf",
+      "principle": "maintainability",
+      "resource_types": [
+        "output"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_019",
+      "name": "Provider and terraform blocks should be defined in a dedicated config file",
+      "principle": "maintainability",
+      "resource_types": [
+        "provider",
+        "terraform"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_020",
+      "name": "Resource names must not be placeholder identifiers",
+      "principle": "maintainability",
+      "resource_types": [
+        "*"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_021",
+      "name": "Variables should have validation rules",
+      "principle": "maintainability",
+      "resource_types": [
+        "variable"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_022",
+      "name": "Provider version constraints must not use wildcard (>=)",
+      "principle": "supply-chain",
+      "resource_types": [
+        "provider_requirement"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_023",
+      "name": "Local value blocks should be defined in locals.tf",
+      "principle": "maintainability",
+      "resource_types": [
+        "local"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_024",
+      "name": "Resource blocks are better placed in a descriptively named file than main.tf",
+      "principle": "maintainability",
+      "resource_types": [
+        "*"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_025",
+      "name": "Files with many resources may become harder to maintain as the project grows",
+      "principle": "maintainability",
+      "resource_types": [
+        "tf_file"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_026",
+      "name": "Module source should not use deep relative paths",
+      "principle": "maintainability",
+      "resource_types": [
+        "module"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_027",
+      "name": "Modules with many input variables may be doing too much",
+      "principle": "maintainability",
+      "resource_types": [
+        "tf_file"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_028",
+      "name": "Workspaces with many resources lead to slow plans and over-privileged pipelines",
+      "principle": "maintainability",
+      "resource_types": [
+        "workspace"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_029",
+      "name": "Workspaces requiring many IAM permissions increase pipeline blast radius",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "workspace"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_030",
+      "name": "Workspaces touching many AWS services are harder to govern and riskier to deploy",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "workspace"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_031",
+      "name": "Variables should have a description",
+      "principle": "maintainability",
+      "resource_types": [
+        "variable"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_032",
+      "name": "Outputs should have a description",
+      "principle": "maintainability",
+      "resource_types": [
+        "output"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_033",
+      "name": "Terraform block should declare a required_version constraint",
+      "principle": "supply-chain",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_034",
+      "name": "Provider blocks must not use the deprecated version argument",
+      "principle": "maintainability",
+      "resource_types": [
+        "provider"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_035",
+      "name": "Git module sources should not use floating branch references",
+      "principle": "supply-chain",
+      "resource_types": [
+        "module"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_036",
+      "name": "Resource labels must not repeat the resource type",
+      "principle": "maintainability",
+      "resource_types": [
+        "*"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_037",
+      "name": "Variables must be referenced within the module",
+      "principle": "maintainability",
+      "resource_types": [
+        "variable"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_038",
+      "name": "Locals must be referenced within the module",
+      "principle": "maintainability",
+      "resource_types": [
+        "local"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_039",
+      "name": "Data sources must be referenced within the module",
+      "principle": "maintainability",
+      "resource_types": [
+        "data.*"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_040",
+      "name": "Outputs with sensitive names must be marked sensitive",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "output"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_041",
+      "name": "Critical resources must enable lifecycle.prevent_destroy",
+      "principle": "maintainability",
+      "resource_types": [
+        "aws_db_instance",
+        "aws_dynamodb_table",
+        "aws_kms_key",
+        "aws_rds_cluster",
+        "google_kms_crypto_key"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_042",
+      "name": "Terraform required_version constraint must allow only Terraform >= 1.5",
+      "principle": "supply-chain",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_043",
+      "name": "AWS provider version constraint must allow only hashicorp/aws >= 5.0",
+      "principle": "supply-chain",
+      "resource_types": [
+        "provider_requirement"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_044",
+      "name": "Google provider version constraint must allow only hashicorp/google >= 4.0",
+      "principle": "supply-chain",
+      "resource_types": [
+        "provider_requirement"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_045",
+      "name": "Azure provider version constraint must allow only hashicorp/azurerm >= 3.0",
+      "principle": "supply-chain",
+      "resource_types": [
+        "provider_requirement"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_046",
+      "name": "Variable names must use snake_case",
+      "principle": "maintainability",
+      "resource_types": [
+        "variable"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_047",
+      "name": "Output names must use snake_case",
+      "principle": "maintainability",
+      "resource_types": [
+        "output"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_048",
+      "name": "Local value names must use snake_case",
+      "principle": "maintainability",
+      "resource_types": [
+        "local"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "id": "HLD_TF_049",
+      "name": "null_resource is deprecated \u2014 use terraform_data",
+      "principle": "repeatability",
+      "resource_types": [
+        "null_resource"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_TF_050",
+      "name": "Variables with sensitive names must have sensitive = true",
+      "principle": "identity-and-access",
+      "resource_types": [
+        "variable"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_051",
+      "name": "lifecycle ignore_changes must not use the all keyword",
+      "principle": "maintainability",
+      "resource_types": [
+        "*"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_052",
+      "name": "terraform.workspace must not be used in resource configuration",
+      "principle": "maintainability",
+      "resource_types": [
+        "*"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_053",
+      "name": "count.index must not appear in resource name attributes",
+      "principle": "maintainability",
+      "resource_types": [
+        "*"
+      ],
+      "severity": "LOW"
+    },
+    {
+      "id": "HLD_TF_054",
+      "name": "Terraform block must declare required_providers",
+      "principle": "supply-chain",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "HLD_TF_055",
+      "name": "GCS backend must specify a bucket",
+      "principle": "repeatability",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "id": "HLD_TF_056",
+      "name": "GCS backend must specify a prefix to avoid state collision",
+      "principle": "repeatability",
+      "resource_types": [
+        "terraform"
+      ],
+      "severity": "MEDIUM"
+    }
+  ],
+  "scanned_paths": [
+    "."
+  ],
+  "summary": {
+    "failed": 2,
+    "passed": 130,
+    "total": 132
+  }
+}

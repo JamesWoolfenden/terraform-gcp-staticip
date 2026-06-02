@@ -69,3 +69,13 @@ variable "network" {
     error_message = "The network variable must not be empty or use the default VPC."
   }
 }
+
+variable "service_account_scopes" {
+  description = "OAuth scopes for the instance service account. Defaults to logging and monitoring only. Do not use 'cloud-platform'."
+  type        = list(string)
+  default     = ["https://www.googleapis.com/auth/logging.write", "https://www.googleapis.com/auth/monitoring"]
+  validation {
+    condition     = !contains(var.service_account_scopes, "cloud-platform") && !contains(var.service_account_scopes, "https://www.googleapis.com/auth/cloud-platform")
+    error_message = "The cloud-platform scope grants full GCP API access. Use specific scopes instead."
+  }
+}

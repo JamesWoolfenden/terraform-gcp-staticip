@@ -28,6 +28,8 @@ resource "google_compute_instance" "instance_with_ip" {
     }
   }
 
+  labels = var.labels
+
   metadata = {
     block-project-ssh-keys = true
     enable-oslogin         = true

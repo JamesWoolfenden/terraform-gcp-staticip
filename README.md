@@ -54,6 +54,7 @@ No modules.
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_address_type"></a> [address\_type](#input\_address\_type) | The type of the address to reserve. Valid values are EXTERNAL or INTERNAL. | `string` | `"EXTERNAL"` | no |
 | <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br/>  "family": "debian-13",<br/>  "project": "debian-cloud"<br/>}</pre> | no |
+| <a name="input_labels"></a> [labels](#input\_labels) | Labels to apply to all resources created by this module. | `map(string)` | `{}` | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type | `string` | `"f1-micro"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the instance | `string` | `"instance-1"` | no |
 | <a name="input_network"></a> [network](#input\_network) | The name or self\_link of the VPC network to which the instance will be connected. Must not be the default network. | `string` | n/a | yes |

@@ -70,6 +70,12 @@ variable "network" {
   }
 }
 
+variable "labels" {
+  description = "Labels to apply to all resources created by this module."
+  type        = map(string)
+  default     = {}
+}
+
 variable "service_account_scopes" {
   description = "OAuth scopes for the instance service account. Defaults to logging and monitoring only. Do not use 'cloud-platform'."
   type        = list(string)

@@ -1,4 +1,4 @@
-id: HLD_PROPOSED_001
+id: HLD_PROPOSED_002
 name: GCP VPC networks must delete the default internet egress route on creation
 principle: network-security
 severity: MEDIUM

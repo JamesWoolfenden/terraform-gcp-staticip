@@ -21,7 +21,6 @@ Include this repository as a module in your existing terraform code:
 module staticip {
   source      = "JamesWoolfenden/staticip/gcp"
   version     = "0.0.4"
-  common_tags = var.common_tags
 }
 ```
 
@@ -46,25 +45,29 @@ No modules.
 | ---- | ---- |
 | [google_compute_address.static](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_address) | resource |
 | [google_compute_instance.instance_with_ip](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) | resource |
-| [google_compute_image.image](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) | data source |
+| [google_service_account.instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
+| [google_compute_image.debian](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
-| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
+| <a name="input_address_type"></a> [address\_type](#input\_address\_type) | The type of the address to reserve. Valid values are EXTERNAL or INTERNAL. | `string` | `"EXTERNAL"` | no |
 | <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br/>  "family": "debian-13",<br/>  "project": "debian-cloud"<br/>}</pre> | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type | `string` | `"f1-micro"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the instance | `string` | `"instance-1"` | no |
+| <a name="input_network"></a> [network](#input\_network) | The name or self\_link of the VPC network to which the instance will be connected. Must not be the default network. | `string` | n/a | yes |
+| <a name="input_project"></a> [project](#input\_project) | GCP Project ID | `string` | n/a | yes |
 | <a name="input_zone"></a> [zone](#input\_zone) | GCP Zone | `string` | `"us-central1-a"` | no |
 
 ## Outputs
 
 | Name | Description |
 | ---- | ----------- |
-| <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | n/a |
-| <a name="output_source_image_id"></a> [source\_image\_id](#output\_source\_image\_id) | n/a |
-| <a name="output_source_image_name"></a> [source\_image\_name](#output\_source\_image\_name) | n/a |
+| <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | The unique identifier for the instance. |
+| <a name="output_service_account_email"></a> [service\_account\_email](#output\_service\_account\_email) | The email of the dedicated service account created for the instance. Grant this SA the roles it needs. |
+| <a name="output_source_image_id"></a> [source\_image\_id](#output\_source\_image\_id) | The unique identifier for the source image used for the instance's boot disk. |
+| <a name="output_source_image_name"></a> [source\_image\_name](#output\_source\_image\_name) | The name of the source image used for the instance's boot disk. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Role and Permissions
@@ -81,7 +84,9 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   description = "A user with least privileges"
   permissions = [
     "compute.addresses.create",
+    "compute.addresses.createInternal",
     "compute.addresses.delete",
+    "compute.addresses.deleteInternal",
     "compute.addresses.get",
     "compute.addresses.setLabels",
     "compute.disks.create",
@@ -96,7 +101,11 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     "compute.networks.use",
     "compute.subnetworks.use",
     "compute.subnetworks.useExternalIp",
-    "compute.zones.get"
+    "compute.zones.get",
+    "iam.serviceAccounts.create",
+    "iam.serviceAccounts.delete",
+    "iam.serviceAccounts.get",
+    "iam.serviceAccounts.update"
   ]
 }
 

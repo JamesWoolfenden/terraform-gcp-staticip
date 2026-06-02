@@ -1,4 +1,4 @@
-data "google_compute_image" "image" {
+data "google_compute_image" "debian" {
   family  = var.image["family"]
   project = var.image["project"]
 }

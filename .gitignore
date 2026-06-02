@@ -21,7 +21,6 @@ lambda
 *backup
 *.bak
 .terraform.tfstate.lock.info
-.terraform.lock.hcl
 tf.json
 tf.plan
 *.log
@@ -32,3 +31,5 @@ checksums.txt
 original/
 .external_modules
 twistcli
+ai-findings.json
+holden-ai-findings.json

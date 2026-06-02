@@ -1,0 +1,23 @@
+id: HLD_PROPOSED_001
+name: GCP VPC networks must delete the default internet egress route on creation
+principle: network-security
+severity: MEDIUM
+rationale: |
+  When a GCP VPC network is created, a default route (destination 0.0.0.0/0 via
+  default-internet-gateway) is added automatically, allowing unrestricted internet
+  egress from all subnets. Deleting this route at creation time forces operators to
+  declare all egress paths explicitly, preventing accidental data exfiltration and
+  aligning with the principle of least-privilege networking. CIS GCP benchmark
+  section 3.2 recommends not using the default route.
+remediation: |
+  Set delete_default_routes_on_create = true on every google_compute_network:
+
+    resource "google_compute_network" "vpc" {
+      name                            = "my-vpc"
+      auto_create_subnetworks         = false
+      delete_default_routes_on_create = true
+    }
+resources:
+  google_compute_network:
+    path: delete_default_routes_on_create
+    equals: true

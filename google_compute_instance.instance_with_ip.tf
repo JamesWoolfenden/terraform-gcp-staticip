@@ -1,7 +1,5 @@
 # holden:ignore:HLD_GCP_005 — this module's purpose is to demonstrate static external IP assignment
 resource "google_compute_instance" "instance_with_ip" {
-  #checkov:skip=CKV_GCP_38: "Ensure VM disks for critical VMs are encrypted with Customer Supplied Encryption Keys (CSEK)"
-  #checkov:skip=CKV_GCP_40: intent
   name         = var.name
   machine_type = var.machine_type
   zone         = var.zone
@@ -11,9 +9,16 @@ resource "google_compute_instance" "instance_with_ip" {
     initialize_params {
       image = data.google_compute_image.debian.self_link
     }
+    kms_key_self_link = var.kms_key_self_link
   }
 
   allow_stopping_for_update = true
+
+  deletion_protection = true
+
+  confidential_instance_config {
+    enable_confidential_compute = true
+  }
 
   shielded_instance_config {
     enable_integrity_monitoring = true
@@ -27,8 +32,6 @@ resource "google_compute_instance" "instance_with_ip" {
       nat_ip = google_compute_address.static.address
     }
   }
-
-  labels = var.labels
 
   metadata = {
     block-project-ssh-keys = true

@@ -54,8 +54,8 @@ No modules.
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_address_type"></a> [address\_type](#input\_address\_type) | The type of the address to reserve. Valid values are EXTERNAL or INTERNAL. | `string` | `"EXTERNAL"` | no |
 | <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br/>  "family": "debian-13",<br/>  "project": "debian-cloud"<br/>}</pre> | no |
-| <a name="input_labels"></a> [labels](#input\_labels) | Labels to apply to all resources created by this module. | `map(string)` | `{}` | no |
-| <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type | `string` | `"f1-micro"` | no |
+| <a name="input_kms_key_self_link"></a> [kms\_key\_self\_link](#input\_kms\_key\_self\_link) | KMS key self link used to encrypt the boot disk (CSEK). Required. | `string` | n/a | yes |
+| <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type | `string` | `"e2-micro"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the instance | `string` | `"instance-1"` | no |
 | <a name="input_network"></a> [network](#input\_network) | The name or self\_link of the VPC network to which the instance will be connected. Must not be the default network. | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | GCP Project ID | `string` | n/a | yes |
@@ -78,7 +78,7 @@ No modules.
 The Terraform resource required is:
 
 ```golang
-
+# apply role
 resource "google_project_iam_custom_role" "terraform_pike" {
   project     = "pike-477416"
   role_id     = "terraform_pike"
@@ -108,6 +108,21 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     "iam.serviceAccounts.delete",
     "iam.serviceAccounts.get",
     "iam.serviceAccounts.update"
+  ]
+}
+
+# plan role
+resource "google_project_iam_custom_role" "terraform_pike_plan" {
+  project     = "pike-477416"
+  role_id     = "terraform_pike_plan"
+  title       = "terraform_pike_plan"
+  description = "A user with least privileges"
+  permissions = [
+    "compute.addresses.get",
+    "compute.images.get",
+    "compute.instances.get",
+    "compute.zones.get",
+    "iam.serviceAccounts.get"
   ]
 }
 

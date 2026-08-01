@@ -25,7 +25,7 @@ variable "image" {
 variable "machine_type" {
   description = "Instance machine type"
   type        = string
-  default     = "f1-micro"
+  default     = "e2-micro"
   validation {
     condition     = length(var.machine_type) > 0
     error_message = "The machine_type variable must not be empty."
@@ -70,12 +70,6 @@ variable "network" {
   }
 }
 
-variable "labels" {
-  description = "Labels to apply to all resources created by this module."
-  type        = map(string)
-  default     = {}
-}
-
 variable "service_account_scopes" {
   description = "OAuth scopes for the instance service account. Defaults to logging and monitoring only. Do not use 'cloud-platform'."
   type        = list(string)
@@ -83,5 +77,16 @@ variable "service_account_scopes" {
   validation {
     condition     = !contains(var.service_account_scopes, "cloud-platform") && !contains(var.service_account_scopes, "https://www.googleapis.com/auth/cloud-platform")
     error_message = "The cloud-platform scope grants full GCP API access. Use specific scopes instead."
+  }
+}
+
+#  Declare kms_key_self_link variable used above
+variable "kms_key_self_link" {
+  description = "KMS key self link used to encrypt the boot disk (CSEK). Required."
+  type        = string
+  sensitive   = true
+  validation {
+    condition     = length(var.kms_key_self_link) > 0
+    error_message = "Need kms linking"
   }
 }

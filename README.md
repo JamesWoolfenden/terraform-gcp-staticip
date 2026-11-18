@@ -119,7 +119,6 @@ resource "google_project_iam_custom_role" "terraform_pike_plan" {
   description = "A user with least privileges"
   permissions = [
     "compute.addresses.get",
-    "compute.images.get",
     "compute.instances.get",
     "compute.zones.get",
     "iam.serviceAccounts.get"

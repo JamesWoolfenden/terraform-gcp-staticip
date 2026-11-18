@@ -33,3 +33,4 @@ original/
 twistcli
 ai-findings.json
 holden-ai-findings.json
+/.terraform.lock.hcl

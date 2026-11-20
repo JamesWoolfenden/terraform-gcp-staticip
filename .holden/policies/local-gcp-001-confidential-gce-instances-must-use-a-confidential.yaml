@@ -1,0 +1,23 @@
+id: LOCAL_GCP_001
+name: Confidential GCE instances must use a Confidential-capable machine series
+principle: reliability
+severity: MEDIUM
+rationale: |
+  Confidential Computing is only supported on N2D, C2D and C3D (AMD SEV),
+  C3 (Intel TDX) and A3 machine series. Enabling it on another series such
+  as E2 passes terraform plan but the Compute API rejects the instance at
+  apply time.
+message: |
+  google_compute_instance enables confidential compute on a machine_type
+  that does not support it.
+remediation: |
+  Use a supported series, e.g. machine_type = "n2d-standard-2", or disable
+  confidential_instance_config.enable_confidential_compute.
+resources:
+  google_compute_instance:
+    if_equals:
+      path: confidential_instance_config.enable_confidential_compute
+      value: true
+      then:
+        path: machine_type
+        matches: "^(n2d|c2d|c3d|c3|a3)-"

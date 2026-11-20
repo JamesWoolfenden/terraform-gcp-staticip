@@ -17,3 +17,13 @@ output "service_account_email" {
   value       = google_service_account.instance.email
   description = "The email of the dedicated service account created for the instance. Grant this SA the roles it needs."
 }
+
+output "address" {
+  value       = google_compute_address.static.address
+  description = "The reserved static IP address."
+}
+
+output "address_self_link" {
+  value       = google_compute_address.static.self_link
+  description = "The self link of the reserved static IP address."
+}

@@ -17,3 +17,8 @@ output "service_account_email" {
   value       = module.staticip.service_account_email
   description = "The email of the dedicated service account created for the instance."
 }
+
+output "address" {
+  value       = module.staticip.address
+  description = "The reserved static IP address."
+}

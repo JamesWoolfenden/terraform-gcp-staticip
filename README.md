@@ -45,6 +45,7 @@ No modules.
 | ---- | ---- |
 | [google_compute_address.static](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_address) | resource |
 | [google_compute_instance.instance_with_ip](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) | resource |
+| [google_project_iam_member.ops](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
 | [google_service_account.instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
 | [google_compute_image.debian](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) | data source |
 
@@ -53,19 +54,23 @@ No modules.
 | Name | Description | Type | Default | Required |
 | ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_address_type"></a> [address\_type](#input\_address\_type) | The type of the address to reserve. Valid values are EXTERNAL or INTERNAL. | `string` | `"EXTERNAL"` | no |
-| <a name="input_image"></a> [image](#input\_image) | Instance Image | `map(any)` | <pre>{<br/>  "family": "debian-13",<br/>  "project": "debian-cloud"<br/>}</pre> | no |
-| <a name="input_kms_key_self_link"></a> [kms\_key\_self\_link](#input\_kms\_key\_self\_link) | KMS key self link used to encrypt the boot disk (CSEK). Required. | `string` | n/a | yes |
-| <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type | `string` | `"e2-micro"` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name of the instance | `string` | `"instance-1"` | no |
+| <a name="input_grant_ops_roles"></a> [grant\_ops\_roles](#input\_grant\_ops\_roles) | Grant the instance service account roles/logging.logWriter and roles/monitoring.metricWriter on the project, so the logging/monitoring scopes actually work. | `bool` | `true` | no |
+| <a name="input_image"></a> [image](#input\_image) | Instance Image | <pre>object({<br/>    family  = string<br/>    project = string<br/>  })</pre> | <pre>{<br/>  "family": "debian-13",<br/>  "project": "debian-cloud"<br/>}</pre> | no |
+| <a name="input_kms_key_self_link"></a> [kms\_key\_self\_link](#input\_kms\_key\_self\_link) | Cloud KMS key (CMEK) ID used to encrypt the boot disk. The key must be in the instance's region and the Compute Engine service agent needs roles/cloudkms.cryptoKeyEncrypterDecrypter on it. | `string` | n/a | yes |
+| <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Instance machine type. Confidential Computing is always enabled, so this must be an n2d, c2d, c3d, c3 or a3 series type. | `string` | `"n2d-standard-2"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the instance, static address and service account (account\_id). 6-30 characters: lowercase letters, digits and hyphens, starting with a letter. | `string` | `"instance-1"` | no |
 | <a name="input_network"></a> [network](#input\_network) | The name or self\_link of the VPC network to which the instance will be connected. Must not be the default network. | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | GCP Project ID | `string` | n/a | yes |
 | <a name="input_service_account_scopes"></a> [service\_account\_scopes](#input\_service\_account\_scopes) | OAuth scopes for the instance service account. Defaults to logging and monitoring only. Do not use 'cloud-platform'. | `list(string)` | <pre>[<br/>  "https://www.googleapis.com/auth/logging.write",<br/>  "https://www.googleapis.com/auth/monitoring"<br/>]</pre> | no |
+| <a name="input_subnetwork"></a> [subnetwork](#input\_subnetwork) | The name or self\_link of the subnetwork, in the region of var.zone, to attach the instance to. An INTERNAL address is reserved from this subnetwork. | `string` | n/a | yes |
 | <a name="input_zone"></a> [zone](#input\_zone) | GCP Zone | `string` | `"us-central1-a"` | no |
 
 ## Outputs
 
 | Name | Description |
 | ---- | ----------- |
+| <a name="output_address"></a> [address](#output\_address) | The reserved static IP address. |
+| <a name="output_address_self_link"></a> [address\_self\_link](#output\_address\_self\_link) | The self link of the reserved static IP address. |
 | <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | The unique identifier for the instance. |
 | <a name="output_service_account_email"></a> [service\_account\_email](#output\_service\_account\_email) | The email of the dedicated service account created for the instance. Grant this SA the roles it needs. |
 | <a name="output_source_image_id"></a> [source\_image\_id](#output\_source\_image\_id) | The unique identifier for the source image used for the instance's boot disk. |
@@ -107,7 +112,9 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     "iam.serviceAccounts.create",
     "iam.serviceAccounts.delete",
     "iam.serviceAccounts.get",
-    "iam.serviceAccounts.update"
+    "iam.serviceAccounts.update",
+    "resourcemanager.projects.getIamPolicy",
+    "resourcemanager.projects.setIamPolicy"
   ]
 }
 
@@ -121,7 +128,8 @@ resource "google_project_iam_custom_role" "terraform_pike_plan" {
     "compute.addresses.get",
     "compute.instances.get",
     "compute.zones.get",
-    "iam.serviceAccounts.get"
+    "iam.serviceAccounts.get",
+    "resourcemanager.projects.getIamPolicy"
   ]
 }
 

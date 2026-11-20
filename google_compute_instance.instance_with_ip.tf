@@ -27,9 +27,15 @@ resource "google_compute_instance" "instance_with_ip" {
   }
 
   network_interface {
-    network = var.network
-    access_config {
-      nat_ip = google_compute_address.static.address
+    network    = var.network
+    subnetwork = var.subnetwork
+    network_ip = local.internal ? google_compute_address.static.address : null
+
+    dynamic "access_config" {
+      for_each = local.access_configs
+      content {
+        nat_ip = access_config.value
+      }
     }
   }
 
@@ -43,4 +49,14 @@ resource "google_compute_instance" "instance_with_ip" {
     scopes = var.service_account_scopes
   }
 
+  lifecycle {
+    # The image comes from a family lookup; without this every new image release
+    # plans a replacement, which deletion_protection then blocks.
+    ignore_changes = [boot_disk[0].initialize_params[0].image]
+
+    precondition {
+      condition     = local.confidential_series_ok
+      error_message = "Confidential Computing is enabled; machine_type must be one of the n2d, c2d, c3d, c3 or a3 series (e.g. n2d-standard-2)."
+    }
+  }
 }

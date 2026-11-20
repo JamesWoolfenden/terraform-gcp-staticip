@@ -37,12 +37,13 @@
         "variables.tf:var.machine_type"
       ],
       "remediation": "Default machine_type to a Confidential-capable series (e.g. n2d-standard-2) and add a lifecycle precondition that rejects incompatible series while confidential compute is on, or make confidential compute a variable.",
+      "resolution": "machine_type default changed to n2d-standard-2; lifecycle precondition rejects non-Confidential series.",
       "resource": "google_compute_instance.instance_with_ip",
       "severity": "MEDIUM",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Confidential Computing is enabled but the default machine_type e2-micro does not support it",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -58,12 +59,13 @@
         "google_compute_instance.instance_with_ip"
       ],
       "remediation": "Add a required subnetwork variable to the module, pass it to network_interface.subnetwork, and add a google_compute_subnetwork (private_ip_google_access, flow logs) in the example's region.",
+      "resolution": "Added required var.subnetwork wired to network_interface.subnetwork; example adds google_compute_subnetwork.this (PGA + flow logs).",
       "resource": "google_compute_network.this",
       "severity": "MEDIUM",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Example VPC is custom-mode with no subnetwork, and the module has no subnetwork input \u2014 instance creation fails",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "medium",
@@ -81,12 +83,13 @@
         "module.staticip"
       ],
       "remediation": "Put the key ring in us-central1 (the region of var.zone).",
+      "resolution": "Example key ring moved to us-central1.",
       "resource": "google_kms_key_ring.static",
       "severity": "MEDIUM",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Example CMEK key ring is in europe-west1 but the boot disk is in us-central1",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -103,12 +106,13 @@
         "google_kms_crypto_key_iam_member.compute_engine"
       ],
       "remediation": "Reference the key through the IAM member so the dependency is implicit.",
+      "resolution": "Example passes kms_key_self_link via google_kms_crypto_key_iam_member.compute_engine.crypto_key_id.",
       "resource": "module.staticip",
       "severity": "MEDIUM",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Instance creation is not ordered after the Compute service agent's KMS grant",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -125,12 +129,13 @@
         "data.google_compute_image.debian"
       ],
       "remediation": "Add lifecycle { ignore_changes = [boot_disk[0].initialize_params[0].image] } so the image is only chosen at creation; patch the running VM in-guest.",
+      "resolution": "Added lifecycle ignore_changes on boot_disk[0].initialize_params[0].image.",
       "resource": "google_compute_instance.instance_with_ip",
       "severity": "MEDIUM",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Image family lookup feeds a ForceNew attribute \u2014 every new Debian image plans a replacement, which deletion_protection then blocks",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "medium",
@@ -145,13 +150,14 @@
       "principle": "network-security",
       "related_resources": [],
       "remediation": "Reject any value whose last path segment is default.",
+      "resolution": "network validation now rejects any value ending in /default.",
       "resource": "var.network",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "supersedes": "HLD_GCP_091",
       "suppression_reason": null,
       "title": "network validation only rejects the literal \"default\"; a self_link to the default VPC passes",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -168,12 +174,13 @@
         "variables.tf:var.address_type"
       ],
       "remediation": "When INTERNAL, reserve the address in var.subnetwork and set network_interface.network_ip instead of creating an access_config; only add access_config.nat_ip for EXTERNAL.",
+      "resolution": "INTERNAL addresses are reserved in var.subnetwork and set as network_ip; access_config is only created for EXTERNAL.",
       "resource": "google_compute_instance.instance_with_ip",
       "severity": "MEDIUM",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "address_type = INTERNAL is accepted but the address is always used as an external NAT IP",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "medium",
@@ -188,12 +195,13 @@
       "principle": "reliability",
       "related_resources": [],
       "remediation": "Set region from var.zone.",
+      "resolution": "Address region derived from var.zone (local.region).",
       "resource": "google_compute_address.static",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Static address region is not tied to the instance's zone",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -210,12 +218,13 @@
         "google_service_account.instance"
       ],
       "remediation": "Validate var.name against the account_id pattern.",
+      "resolution": "var.name validated against the service account account_id pattern.",
       "resource": "var.name",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "var.name is also the service account account_id, but validation only checks it is non-empty",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -229,12 +238,13 @@
       "principle": "logging-and-monitoring",
       "related_resources": [],
       "remediation": "Grant roles/logging.logWriter and roles/monitoring.metricWriter to the SA on the project (togglable), matching the default scopes.",
+      "resolution": "Added google_project_iam_member.ops granting logWriter/metricWriter, toggled by var.grant_ops_roles (default true).",
       "resource": "google_service_account.instance",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Instance SA gets logging/monitoring scopes but no logWriter/metricWriter roles, so guest logs and metrics are dropped",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -249,12 +259,13 @@
       "principle": "maintainability",
       "related_resources": [],
       "remediation": "Describe it as a CMEK key and drop sensitive = true.",
+      "resolution": "Description corrected to CMEK; sensitive removed.",
       "resource": "var.kms_key_self_link",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "kms_key_self_link is documented as CSEK and marked sensitive",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -269,12 +280,13 @@
       "principle": "maintainability",
       "related_resources": [],
       "remediation": "Add an address output.",
+      "resolution": "Added address and address_self_link outputs.",
       "resource": "google_compute_address.static",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Module does not output the reserved static IP address",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -289,12 +301,13 @@
       "principle": "maintainability",
       "related_resources": [],
       "remediation": "Type it as object({ family = string, project = string }).",
+      "resolution": "var.image typed as object({family, project}).",
       "resource": "var.image",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "var.image is map(any) instead of an object with family and project",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -309,12 +322,13 @@
       "principle": "cost",
       "related_resources": [],
       "remediation": "Use a 90-day rotation period.",
+      "resolution": "Example rotation_period set to 7776000s (90 days); destroy_scheduled_duration 2592000s also added for HLD_GCP_547.",
       "resource": "google_kms_crypto_key.static",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": "Example KMS key rotates every ~28 hours",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     },
     {
       "confidence": "high",
@@ -328,12 +342,13 @@
       "principle": "repeatability",
       "related_resources": [],
       "remediation": "Use .holden/policies, add scan_roots for . and example/examplea, and remove the superseded HLD_PROPOSED_002 file.",
+      "resolution": ".holden.yaml uses .holden/policies with scan_roots; superseded HLD_PROPOSED_002 policy file removed (built-in HLD_GCP_094).",
       "resource": ".holden.yaml",
       "severity": "LOW",
-      "status": "open",
+      "status": "fixed",
       "suppression_reason": null,
       "title": ".holden.yaml uses a Windows path for local policies and has no scan_roots",
-      "unresolved_since": "2026-11-20"
+      "unresolved_since": null
     }
   ],
   "scan_date": "2026-11-20T12:00:00Z",
